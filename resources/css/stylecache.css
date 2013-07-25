@@ -849,12 +849,13 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
 	#filters { float: right; }
 		#options li { margin-left: 5px; }
 		#options li:first-child { margin-left: 0px; }
-		#options li a { display: block; padding: 0.35em 0.9em; color: #202020; font-weight: normal; font-size: 87.5%; line-height: 1.125; text-transform: uppercase; font-family: "Dosis", Arial, sans-serif; }
-		#options li a:hover { text-decoration: none; background-color: #6e5baa; color: #ffffff; border-radius: 12px; }
-		#options li a.selected { background-color: #6e5baa; color: #ffffff; border-radius: 12px; font-weight: 700; }
+		#options li a { display: block; /*padding: 0.35em 0.9em;*/ margin-left:0.9em; color: #202020; font-weight: normal; font-size: 87.5%; line-height: 1.125; text-transform: uppercase; font-family: "Dosis", Arial, sans-serif; margin-top:0.2em; }
+		#options li a:hover { color: #6e5baa; text-decoration: none; padding-bottom:0.2em; border-bottom: solid #6e5baa 4px; }
+		#options li a.selected { color: #6e5baa; font-weight: 700; padding-bottom:0.2em; border-bottom: solid #6e5baa 4px; }
+		
 	#etc { margin-top: 4px; }
 		#options #toggle-sizes a { background: no-repeat top left transparent; text-indent: -9999px; width: 28px; height: 18px; padding: 0!important; float: left; margin-right: 20px; margin-top: 3px; }
-		#options #toggle-sizes a:hover { background: no-repeat top right transparent; border-radius: 0px; }
+		#options #toggle-sizes a:hover { background: no-repeat top right transparent; border-radius: 0px; border-bottom:0px;}
 		#options #toggle-sizes a:first-child { background: no-repeat bottom left transparent; text-indent: -9999px; width: 28px; height: 18px; padding: 0!important; }
 		#options #toggle-sizes a:first-child:hover { background: no-repeat bottom right transparent; border-radius: 0px; }
 		#options #toggle-sizes a.toggle-selected { background-position: top right; }
@@ -865,13 +866,15 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
 		/* SVG Version */
 		.toggle-sizes-small-svg { display: none; cursor: pointer; }
 		.toggle-sizes-large-svg { display: none; cursor: pointer; }
-		html.mod-svg .toggle-sizes-small-svg { display: block; }
-		html.mod-svg .toggle-sizes-large-svg { display: block; }
+		html.mod-svg .toggle-sizes-small-svg { display: block; margin-left:-28px;}
+		html.mod-svg .toggle-sizes-large-svg { display: block; margin-left:-12px;}
 		html.mod-svg #options #toggle-sizes a { background: none repeat scroll 0 0 transparent; text-indent: 0; }
 		html.mod-svg #options #toggle-sizes a:hover { background: none repeat scroll 0 0 transparent; text-indent: 0; }
 			#options #toggle-sizes a svg path { fill: #d9dcdd; }
 			#options #toggle-sizes a:hover svg path { fill: #a0a0a0; }
 			#options #toggle-sizes a.toggle-selected svg path { fill: #a0a0a0; }
+			
+		.underline-removed { border-bottom: 0px; }
 
 /* Thumbnail Sizes */
 .element {

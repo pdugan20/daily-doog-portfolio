@@ -1,5 +1,5 @@
-application: doogport
-version: test-1a
+application: dailydoog
+version: new-responsive-1
 runtime: python27
 api_version: 1
 threadsafe: false
@@ -7,6 +7,8 @@ threadsafe: false
 handlers:
 - url: /resources
   static_dir: resources
+  http_headers:
+    Access-Control-Allow-Origin: "*"
 
 - url: .*
   script: main.py

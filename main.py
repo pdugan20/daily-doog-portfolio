@@ -27,10 +27,31 @@ class ProjectPage(webapp.RequestHandler):
     path = os.path.join(os.path.dirname(__file__), 'themes/templates/project_view.html')
     template_values = None
     self.response.out.write(template.render(path, template_values))
+    
+class BlogPage(webapp.RequestHandler):
+  def get(self):
+    path = os.path.join(os.path.dirname(__file__), 'themes/templates/blog.html')
+    template_values = None
+    self.response.out.write(template.render(path, template_values))
+    
+class AboutPage(webapp.RequestHandler):
+  def get(self):
+    path = os.path.join(os.path.dirname(__file__), 'themes/templates/about.html')
+    template_values = None
+    self.response.out.write(template.render(path, template_values))
+    
+class BooksPage(webapp.RequestHandler):
+  def get(self):
+    path = os.path.join(os.path.dirname(__file__), 'themes/templates/books.html')
+    template_values = None
+    self.response.out.write(template.render(path, template_values))
 
 application = webapp.WSGIApplication([
   ('/project', ProjectPage),
-  ('/', MainPage)
+  ('/blog', BlogPage),
+  ('/portfolio', MainPage),
+  ('/books', BooksPage),
+  ('/', AboutPage)
 ], debug=True)
 
 def main():
