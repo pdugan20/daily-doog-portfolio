@@ -792,8 +792,12 @@ body.daisho-classic-has-welcome-text:not(.daisho-classic-has-slideshow) .welcome
 		/* Project Description */
 		.project-description { font-family: "Open Sans", Arial, sans-serif; font-weight: 300; font-size: 60%; color: #333; width: 100%; clear: both; line-height: 145%; margin-bottom:40px;}
 		
+		.no-picture { margin-bottom: 25px;}
+		
 		.project-description.about-me { float:left; clear: left; margin-bottom: 10px; line-height: 145%; margin-top:41px;}
-		.my-picture { float:left; margin-right:2%;}
+		.my-picture { float:left; padding-right:25px; padding-bottom:2%;}
+		
+		.all-about-me { }
 		
 		@media (max-width: 850px){ 
 			.content-projectc.about { margin-top:0px; }
@@ -803,6 +807,7 @@ body.daisho-classic-has-welcome-text:not(.daisho-classic-has-slideshow) .welcome
 		
 		@media (max-width: 580px){ 
 			.my-pic-fix { float:left; width:580px; margin-bottom:20px; }
+			.my-picture { padding-right:0px; }
 		}
 		
 		@media (max-width: 1200px){ .project-description { line-height: 125%; width:100%;} }	
@@ -814,7 +819,7 @@ body.daisho-classic-has-welcome-text:not(.daisho-classic-has-slideshow) .welcome
 		.blog-author-info { float:left; width:15%; margin-right: 5%;}
 		.author-picture { float:right; }
 		.author-sub-div { float:right; }
-		.blog-all { float:left; margin-top: 38px; }
+		.blog-all { float:left; margin-top: 38px; width:100%;}
 		
 		.author-name { font-family: "Open Sans", Arial, sans-serif; font-style: bold; font-weight: 700; font-size: 50%; color: #333; text-align: right;}
 		.author-byline { font-family: "Open Sans", Arial, sans-serif; font-style: italic; font-weight: 300; font-size: 45%; color: #9797A5; text-align: right;}
@@ -831,6 +836,8 @@ body.daisho-classic-has-welcome-text:not(.daisho-classic-has-slideshow) .welcome
 	  .blog-post-title a:hover {color: #6E5BAA;}
 		.blog-post-article { float:left; clear: left; line-height: 145%;}
 		
+		.about-desc { float:left; }
+		
 		.content-full-page { width:100%; margin-bottom:10px;}
 		
 		.label-wrapper { float:left; clear: left; border-bottom:1px; border-color:#D9DCDD; width:100%; border-style:solid; color:#FFF;}
@@ -844,7 +851,9 @@ body.daisho-classic-has-welcome-text:not(.daisho-classic-has-slideshow) .welcome
 		.gplus-follow { float: right; margin-right:5px;}
 		.comment-margin { margin-bottom: 33px; }
 		
-		.content-small-top { line-height:135%; }
+		.content-small-top { line-height:135%; width:100%;}
+		
+		div#complete-blog { width:100%; }
 		
 		@media (max-width: 850px){
 		
@@ -858,7 +867,7 @@ body.daisho-classic-has-welcome-text:not(.daisho-classic-has-slideshow) .welcome
 			.posted-on-date { float: left; margin-left: 10px; margin-top:2px;}
 			.blog-main-content { clear:left; width: 100%;}
 			.author-sub-div { float:left; margin-left:20px; margin-top:0px;}
-			.blog-all { margin-top: 0px; }
+			.blog-all { margin-top: 0px; width:100%; }
 			.blog-extra { margin-top:0px; }
 			.blog-share-buttons { float:left; clear:left; margin-top:-10px;}
 			.gplus-follow { float: left; margin-top:-10px; margin-left:5px;}

@@ -4,12 +4,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=.75, maximum-scale=.75" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-title" content="Daily Doog :: Portfolio of Patrick Dugan">
-<title>Daily Doog :: Portfolio of Patrick Dugan</title>
-
 <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> !-->
+<meta name="apple-mobile-web-app-capable" content="yes" />
 <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black"> !-->
+<meta name="apple-mobile-web-app-title" content="Daily Doog :: Portfolio of Patrick Dugan">
+<title>Daily Doog :: {{ projectName }}</title>
 
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
@@ -64,24 +63,22 @@ WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
 -->
 
-<title>Daily Doog :: Portfolio of Patrick Dugan</title>
-
 <link rel="shortcut icon" href="./resources/images/favicon.png">
 <link rel="stylesheet" type="text/css" media="screen" href="./resources/css/style.css">
 <link rel="stylesheet" type="text/css" media="all" href="./resources/css/stylecache.css" id="shortcodesstylecache-css">
 
-<link href="./resources/css/dosis.css" rel="stylesheet" type="text/css">
-<link href="./resources/css/lato.css" rel="stylesheet" type="text/css">
-<link href="./resources/css/opensans.css" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,100italic,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,700,600,300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700' rel='stylesheet' type='text/css'>
 
-<script type="text/javascript" src="./resources/js/jquery.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 </head>
 
 <body class="home blog responsive flow-skin-0 body-visible " screen_capture_injected="true">
 
 <header id="header">
 	<div class="inner clearfix">
-		<div id="logo-image"><a title="Daily Doog :: Portfolio of Patrick Dugan" href="http://themes.devatic.com/daisho">
+		<div id="logo-image"><a title="Daily Doog :: Portfolio of Patrick Dugan" href="/">
 		<img src="./resources/images/svg/dailydoog.svg"></a>
 		</div>		
 		
@@ -89,31 +86,31 @@ WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
 			<div class="menu-main-menu-container">
 			  <ul id="menu" class="flow_smart_menu">
 					<li>
-						<a href="http://themes.devatic.com/daisho/our-team/">
+						<a href="./">
 						<span class="menu-icon">f</span>
 						<span>About Me</span></a>
 					</li>
 					<li>
-						<a href="http://themes.devatic.com/daisho/blog/">
+						<a href="http://blog.dailydoog.com">
 						<span class="menu-icon">r</span>
 						<span>Blog</span></a>
 					</li>
 					<li class="current-menu-item current_page_item">
-					  <a href="http://themes.devatic.com/daisho/blog/">
-						<span class="menu-icon">W</span>
+					  <a href="./portfolio">
+						<span class="menu-icon current_page_item">W</span>
 						<span>Portfolio</span></a>
 					</li>
 					<li>
-						<a href="http://themes.devatic.com/daisho/portfolio/">
+						<a href="./resources/resume/patdugan_resume.pdf">
 						<span class="menu-icon">K</span><span>Resume</span></a>
 					</li>
 					<li>
-						<a href="http://themes.devatic.com/daisho/portfolio/">
+						<a href="./books">
 						<span class="menu-icon">B</span>
 						<span>Reading List</span></a>
 					</li>
 					<li>
-						<a href="http://themes.devatic.com/daisho/contact/">
+						<a href="mailto:dugan.pat@gmail.com">
 						<span class="menu-icon">m</span>
 						<span>Contact</span></a>
 					</li>
@@ -131,22 +128,24 @@ WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
 <!-- begin project description !-->
 <div class="page-template-wrapper">
 	<header class="page-header">
-		<div class="page-title">Project Title</div>
+		<div class="page-title">{{ projectName }}</div>
 			<div class="page-description">
 				<div class="content-projectc">
 						<div class="project-meta">
 							<div class="project-meta-data project-date clearfix">
 								<div class="project-meta-heading">DATE</div>
-								<div class="project-meta-description project-exdate">Spring 2012</div>
+								<div class="project-meta-description project-exdate">{{ projectDates }}</div>
 								<div class="small-clear">
 								<div class="project-meta-heading">COMPANY</div>
-								<div class="project-meta-description project-exclient">Google</div>
+								<div class="project-meta-description project-exclient">{{ projectCompany }}</div>
 								</div>
 							</div>
 						</div>
-					<div class="project-description">I spent several weekends in 2012 sketching, wire-framing, developing, and eventually launching USMC ProFitness. The application begins by prompting users to create a local profile based on their age and gender. This profile is then used to dynamically calculate a United States Marine Corps Physical Fitness Test (PFT) score using that user’s 3-mile run-time, 2 minute sit-up count, and max pull-up count as a scoring basis. I targeted android API Levels 11+ during development but also made this application backwards compatible up to Gingerbread devices.</div>
+					<div class="project-description no-picture">{{ projectSummary|safe }}</div>
 					<div class="project-slide project-slide-image portfolio-fs-slide" style="max-width: 100%; width: 100%;">
-						<img class="myimage" src="http://themes.devatic.com/daisho/wp-content/uploads/2013/02/bas_006.jpg" alt="">
+						
+						<!-- <img class="myimage" src="/" alt=""> !-->
+						
 						<span style="opacity: 1;" class="project-slide-description">
 					</div>
 				</div>	
@@ -158,48 +157,42 @@ WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
 	<div style="clear:both;"></div>
 	<footer id="footer">
 		<div class="inner">
-			<div class="container_12">
-				<div class="grid_12 grid_not_responsive">
-					<ul class="footer-widget-container">
-						<li id="text-5" class="widget widget_text"></li>
-					</ul>
+		  <div class="container_12">
+				<div class="grid_12"><ul class="footer-widget-container">
+					<div class="textwidget"><hr></div>
 				</div>
-				<div class="grid_12">
-					<ul class="footer-widget-container">
-						<li id="text-8" class="widget widget_text">
-							<div class="textwidget"><hr></div>
-						</li>
-					</ul>
-				</div>
+				
 				<div class="grid_6 push_6 last">
 					<ul class="footer-widget-container">
 						<li id="text-10" class="widget widget_text">
-							<div class="textwidget">
-								<ul class="footer-social-icons">
-									<li><a href="https://twitter.com/pdugan19">&#xf099;</a></li>
-									<li><a href="https://github.com/pdugan20">&#xf113;</a></li>
-									<li><a href="https://www.facebook.com/patrick.dugan">&#xf082;</a></li>
-									<li><a href="http://instagram.com/pdugan20">&#xf16d;</a></li>
-									<li><a href="https://plus.google.com/u/0/104276451649083522843/posts">&#xf0d4;</a></li>
-									<li><a href="http://www.linkedin.com/in/pdugan">&#xf08c;</a></li>
-									<li><a href="http://feeds.feedburner.com/dailydoog">&#xf09e;</a></li>
-								</ul>
-							</div>
+						<div class="textwidget">
+							<ul class="footer-social-icons">
+								<li><a href="https://twitter.com/pdugan19">&#xf099;</a></li>
+								<li><a href="https://github.com/pdugan20">&#xf113;</a></li>
+								<li><a href="https://www.facebook.com/patrick.dugan">&#xf082;</a></li>
+								<li><a href="http://instagram.com/pdugan20">&#xf16d;</a></li>
+								<li><a href="https://plus.google.com/u/0/104276451649083522843/posts">&#xf0d4;</a></li>
+								<li><a href="http://www.linkedin.com/in/pdugan">&#xf08c;</a></li>
+								<li><a href="http://feeds.feedburner.com/dailydoog">&#xf09e;</a></li>
+							</ul>
+						</div>
 						</li>
 					</ul>
 				</div>
+				
 				<div class="grid_6 pull_6">
 					<ul class="footer-widget-container">
 						<li id="text_icl-2" class="widget widget_text_icl">
 							<div class="textwidget">
 								<div class="copyright_notice">© 2013 Patrick Dugan. This runs on AppEngine.</div>
-						</div>
-					</li>
-				</ul>
+							</div>
+						</li>
+					</ul>
+				</div>			
+			
 			</div>
+			<div class="clear"></div>
 		</div>
-		<div class="clear"></div>
-	</div>
 	</footer>
 		
 	<div class="mobile_app_menu_main_wrapper">
@@ -211,49 +204,50 @@ WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
 			<div class="menu-mobile-menu-container">
 				<ul id="mobile_app_menu" class="menu">
 					<li class="menu-item">
-						<a href="http://themes.devatic.com/daisho/our-team/">
+						<a href="./">
 						<span class="menu-icon icon-mod-about">f</span>
 						<span>About Me</span></a>
 					</li>
 					<li class="menu-item">
-						<a href="http://themes.devatic.com/daisho/blog/">
+						<a href="http://blog.dailydoog.com">
 						<span class="menu-icon icon-mod-blog">r</span>
 						<span>Blog</span></a>
 					</li>
-					<li class="current-menu-item current_page_item menu-item">
-						<a href="http://themes.devatic.com/daisho/portfolio/">
-						<span class="menu-icon icon-mod-portfolio">W</span>
+					<li class="current-menu-item">
+						<a href="./portfolio">
+						<span class="menu-icon icon-mod-portfolio current_page_item">W</span>
 						<span>Portfolio</span></a>
 					</li>
 					<li class="menu-item">
-						<a href="http://themes.devatic.com/daisho/portfolio/">
+						<a href="./resources/resume/patdugan_resume.pdf">
 						<span class="menu-icon icon-mod-resume">K</span>
 						<span>Resume</span></a>
 					</li>
 					<li class="menu-item">
-						<a href="http://themes.devatic.com/daisho/portfolio/">
+						<a href="./books">
 						<span class="menu-icon icon-mod-book">B</span>
 						<span>Reading List</span></a>
 					</li>
 					<li class="menu-item">
-						<a href="http://themes.devatic.com/daisho/contact/">
+						<a href="mailto:dugan.pat@gmail.com">
 						<span class="menu-icon icon-mod-contact">m</span>
 						<span>Contact</span></a>
 					</li>
 				</ul>
-			</div>							
+			</div>								
 		</div>
 	</div>
 </div>
 
 <script type="text/javascript" src="./resources/js/portfolio-interactions.js"></script>
 <script type="text/javascript" src="./resources/js/jscache.js"></script>
-<script type="text/javascript" src="./resources/js/jquery.form.min.js"></script>
 <script type="text/javascript" src="./resources/js/scripts.js"></script>
-<script type="text/javascript" src="./resources/js/jquery.ui.core.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+<!-- <script type="text/javascript" src="./resources/js/jquery.ui.core.min.js"></script>
 <script type="text/javascript" src="./resources/js/jquery.ui.widget.min.js"></script>
 <script type="text/javascript" src="./resources/js/jquery.ui.accordion.min.js"></script>
-<script type="text/javascript" src="./resources/js/jquery.ui.tabs.min.js"></script>
+<script type="text/javascript" src="./resources/js/jquery.ui.tabs.min.js"></script> !-->
 
 </body>
 </html>

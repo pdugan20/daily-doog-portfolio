@@ -172,7 +172,8 @@ body {
   float: left;
   overflow: hidden;
   position: relative;
-  background: #888;
+  /* background for portfolio projects */
+  background: #d9dcdd;
   color: #222;
   -webkit-border-top-right-radius: 1.2em;
       -moz-border-radius-topright: 1.2em;
@@ -2927,7 +2928,7 @@ blockquote {
 	border-left: 0 none;
 	/* font-family: "Open Sans", Arial, sans-serif; */
 	clear: both;
-    color: #6B6A73;
+    color: #333;
     font-size: 168.75%;
     font-style: italic;
     font-weight: 700;
@@ -2936,7 +2937,7 @@ blockquote {
     margin-bottom: 2em!important;
     margin-top: 30px;
 	position: relative;
-    padding-bottom: 35px;
+    /* padding-bottom: 35px; */
     padding-top: 35px;
     text-indent: 40px;
     /* width: 100%; */
@@ -2961,8 +2962,8 @@ blockquote blockquote, blockquote q { quotes: "\"" "\""; position: relative; }
 blockquote * { z-index: 2; position: relative; }
 blockquote *:last-child, q *:last-child { margin-bottom: 0; }
 
-blockquote:after { border-bottom: 1px solid #00AAFF; clear: both; content: " "; display: block; float: left; padding-bottom: 30px; position: absolute; width: 40%; }
-blockquote:before { z-index: 1; quotes: "«" "»"; quotes: "\00AB" "\00BB"; border-top: 1px solid #00AAFF; color: #00AAFF; content: open-quote; font-size: 54px; left: 0; padding-top: 15px; position: absolute; text-indent: 0; top: 10px; width: 40%; }
+blockquote:after { border-bottom: 1px solid #6e5baa; clear: both; content: " "; display: block; float: left; padding-bottom: 30px; position: absolute; width: 40%; }
+blockquote:before { z-index: 1; quotes: "«" "»"; quotes: "\00AB" "\00BB"; border-top: 1px solid #6e5baa; color: #6e5baa; content: open-quote; font-size: 54px; left: 0; padding-top: 15px; position: absolute; text-indent: 0; top: 10px; width: 40%; }
 
 .quote-style-2 { background-color: #f7f7f7; border-radius: 8px; padding: 35px 40px 35px 40px; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; }
 .quote-style-2:after { border-bottom: 0 none; }
