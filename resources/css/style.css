@@ -123,7 +123,7 @@ compact header:
 	@media (max-width: 950px){ .daisho-portfolio-viewing-project.daisho-portfolio #header .inner { width: 92%; } }
 
 #logo-text, #logo-image, .logo-image { height: 100%; position: absolute; }
-	#logo-image img { display: block; bottom: 0; margin: auto; position: absolute; top: 0; width:235px;}
+	#logo-image img { display: block; bottom: 0; margin: auto; position: absolute; top: 0; /* width:235px; */}
 #logo-text { display: table; }
 	.logo-text-inner { display: table-cell; vertical-align: middle; height: 150px; }
 		#logo-text h1 { text-transform: uppercase; margin-bottom: 0; }
@@ -742,6 +742,11 @@ body.daisho-classic-has-welcome-text:not(.daisho-classic-has-slideshow) .welcome
 				.project-meta-data { margin-bottom: 5px; font-size: 75%; }
 					.project-meta-heading { float: left; line-height: 100%; word-wrap: break-word; padding-right: 10px; font-family: "Open Sans", Arial, sans-serif; font-weight: 600; }
 					.project-meta-description { float: left; color: #505050; font-family: "Open Sans", Arial, sans-serif; line-height: 100%; font-weight: 400; word-wrap: break-word; padding-right:20px;}
+					
+					
+					.project-comp { color: #505050; font-family: "Open Sans", Arial, sans-serif; line-height: 100%; font-weight: 400;}
+					
+					
 					.project-meta-description a { text-decoration: underline; }
 					@media (max-width: 850px){
 						.project-meta-heading { font-size: 75%; }
@@ -752,12 +757,12 @@ body.daisho-classic-has-welcome-text:not(.daisho-classic-has-slideshow) .welcome
 						.project-meta-col-1 { float: left; max-width: none; min-width: auto; width: 100%; margin-right: 0; }
 						.project-meta-col-2 { float: left; max-width: none; min-width: auto; width: 100%; margin-right: 0; }
 							.project-meta-data { font-size: 112.5%; margin-bottom: 10px; }
-								.project-meta-description { max-width: 255px; }
+								.project-meta-description { /* max-width: 255px; */ }
 								
 					}	
 					
 					@media (max-width: 550px){
-						.small-clear { float:left; clear: left; margin-top:10px;}
+						.small-clear { float:left; clear: left; /* margin-top:10px; */}
 					}
 		
 		/* Sharing Icons */
@@ -795,7 +800,7 @@ body.daisho-classic-has-welcome-text:not(.daisho-classic-has-slideshow) .welcome
 		.no-picture { margin-bottom: 25px;}
 		
 		.project-description.about-me { float:left; clear: left; margin-bottom: 10px; line-height: 145%; margin-top:41px;}
-		.my-picture { float:left; padding-right:25px; padding-bottom:2%;}
+		.my-picture { float:left; padding-right:25px; /* padding-bottom:2%; */}
 		
 		.all-about-me { }
 		
@@ -1793,9 +1798,15 @@ input.wpcf7-submit:hover { color: #6e5baa; }
 			.daisho-portfolio .footer-social-icons a { font-size: 162.5%; }
 		}
 		/* END THUMBNAIL VIEW */
+		
+		.blog-archive { float: left; margin-right: 10px; margin-top: -3px;}
+		@media (max-width: 850px){ .blog-archive { float:none; margin-bottom: 3.8%; margin-left: auto; margin-right: auto; margin-left: auto;
+margin-right: auto; width: 122px; } }
 
-		#footer .copyright_notice { font-size: 87.5%; color: #919495; font-weight: 500; }
-		@media (max-width: 850px){ #footer .copyright_notice { font-size: 100%; text-align: center; } }
+		#footer .copyright_notice { font-size: 87.5%; color: #919495; font-weight: 500; float:left;}
+		@media (max-width: 850px){ #footer .copyright_notice { font-size: 100%; text-align: center; float:none; clear: left;} }
+		@media (max-width: 950px){ #footer .copyright_notice { float:none; } }
+		
 		@media (max-width: 950px){ .daisho-portfolio #footer .copyright_notice { font-size: 100%; text-align: center; } }
 		
 		@media (max-width: 850px){ #footer .footer-not-responsive { display: none; } }
@@ -1813,3 +1824,5 @@ input.wpcf7-submit:hover { color: #6e5baa; }
 
 .project-img { opacity: 0; transition: opacity 0.5s; -moz-transition: opacity 0.5s; -webkit-transition: opacity 0.5s; }
 .project-img-visible { opacity: 1; transition: opacity 0.5s; -moz-transition: opacity 0.5s; -webkit-transition: opacity 0.5s; } -moz-transition: opacity 0.5s; -webkit-transition: opacity 0.5s; }
+
+image.project-img.project-img-visible.bookshelf-img { height:180px; }

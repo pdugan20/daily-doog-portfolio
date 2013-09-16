@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: http://blog.dailydoog.com/feeds/posts/default?orderby=updated
+

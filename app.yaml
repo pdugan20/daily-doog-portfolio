@@ -1,5 +1,5 @@
 application: dailydoog
-version: new-responsive-1
+version: new-responsive-2
 runtime: python27
 api_version: 1
 threadsafe: false
@@ -9,6 +9,10 @@ handlers:
   static_dir: resources
   http_headers:
     Access-Control-Allow-Origin: "*"
+    
+- url: /robots.txt
+  static_files: resources/crawler/robots.txt
+  upload: resources/crawler/robots.txt
 
 - url: .*
   script: main.py

@@ -9,10 +9,10 @@ function centerIsotypeImages(){
 		var img_ratio = $this.find('img').get(0).width / $this.find('img').get(0).height;
 
 		if(cont_ratio <= img_ratio){
-			$this.find('img').css({ 'width' : 'auto', 'height' : '100%', 'top' : 0 }).css({ 'left' : ~(($this.find('img').width()-$this.width())/2)+1 });
+			$this.find('img').css({ 'width' : '220px', 'height' : '320px', 'top' : 0 }).css({ 'left' : ~(($this.find('img').width()-$this.width())/2)+1 });
 			$this.find('img').addClass('project-img-visible');
 		}else{
-			$this.find('img').css({ 'width' : '100%', 'height' : 'auto', 'left' : 0 }).css({ 'top' : ~(($this.find('img').height()-$this.height())/2)+1 });
+			$this.find('img').css({ 'width' : '220px', 'height' : '320px', 'left' : 0 }).css({ 'top' : ~(($this.find('img').height()-$this.height())/2)+1 });
 			$this.find('img').addClass('project-img-visible');
 		}
 	});
@@ -64,7 +64,6 @@ jQuery(document).ready(function(){
 		}
 	});
 	
-	// This section controls the slider transitions on-pageload
 	    
     $container.isotope({
       itemSelector : '.element',
@@ -158,6 +157,32 @@ jQuery(document).ready(function(){
 			$container.isotope( options );
 		}
 	}
+		
+	
+	// close bringPortfolio()
+	//jQuery('#compact_navigation_container').delegate('.header-back-to-blog-link', 'click', function(){
+	jQuery('.header-back-to-blog-link').on('click', function(){
+		// If button is supposed to redirect to some external URL
+		if(jQuery(this).hasClass('back-link-external')){ return; }
+		// Usual action of button
+		jQuery('.portfolio_box').removeClass('portfolio_box-visible');
+		jQuery('body').removeClass('daisho-portfolio-viewing-project');
+		jQuery('#compact_navigation_container').removeClass('compact_navigation_container-visible');
+		jQuery('.project-coverslide').removeClass('project-coverslide-visible');
+		jQuery('.project-navigation').removeClass('project-navigation-visible');
+		jQuery('.portfolio-arrowright').removeClass('portfolio-arrowright-visible');
+		jQuery('.portfolio-arrowleft').removeClass('portfolio-arrowleft-visible');
+		jQuery('.project-slides').empty();
+		jQuery('title').text(homepage_title);
+		var document_title = "Daisho WordPress Theme";
+		var portfoliohistorywpurl = "daisho";
+		window.history.pushState({}, document_title, ((portfoliohistorywpurl)?("/"+portfoliohistorywpurl+""):"/"));
+	});
+
+	// Close project on background click
+	/* jQuery(document).on('click', '.project-coverslide', function(){
+		closePortfolioItem();
+	}); */
  
 	// change size of clicked element
 	$container.delegate( '.element', 'click', function(){
