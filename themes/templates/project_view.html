@@ -165,26 +165,36 @@ WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
 					<div class="project-description no-picture">{{ projectSummary|safe }}</div>
 					
 					<div class="project-meta-heading p-artifact p-summary">DESIGN PROCESS FOLLOWED</div>
-					<div class="project-description no-picture">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.</div>
+					<div class="project-description no-picture">
+{% if projectDesignProcess %}
+  {{ projectDesignProcess|safe }}
+{% else %}
+  I'm still typing up the design process that was used for this particular project.				
+{% endif %}					
+					</div>
 					
 					<div class="project-meta-heading p-artifact p-summary">SCREENSHOTS</div>
 					<div class="project-description no-picture">
+					      <div class="popup-gallery">
+					      
+{% if finalScreenShotList %}
+  {% for screenshot in finalScreenShotList %}
+  <a href="{{ screenshot.1 }}" title="{{ screenshot.0 }}"><img class="project-screen" src="{{ screenshot.2 }}" width="75" height="75"></a>
+  {% endfor %}
+{% else %}
+  Screenshots are unavailable for this project.
+{% endif %}
 
-      <div class="popup-gallery">
-        <a href="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_b.jpg" title="The Cleaner"><img src="./resources/images/lightbox-test/8558295633_f34a55c1c6_s.jpg" width="75" height="75"></a>
-        <a href="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_b.jpg" title="Winter Dance"><img src="./resources/images/lightbox-test/8558295631_0f56c1284f_s.jpg" width="75" height="75"></a>
-        <a href="http://farm9.staticflickr.com/8225/8558295635_b1c5ce2794_b.jpg" title="The Uninvited Guest"><img src="./resources/images/lightbox-test/8558295635_b1c5ce2794_s.jpg" width="75" height="75"></a>
-        <a href="http://farm9.staticflickr.com/8383/8563475581_df05e9906d_b.jpg" title="Oh no, not again!"><img src="./resources/images/lightbox-test/8563475581_df05e9906d_s.jpg" width="75" height="75"></a>
-        <a href="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_b.jpg" title="Swan Lake"><img src="./resources/images/lightbox-test/8559402846_8b7f82e05d_s.jpg" width="75" height="75"></a>
-      </div>
-      </div>
+					      </div>
+      				</div>
 					
 					<div class="project-meta-heading p-artifact">ARTIFACTS & DELIVERABLES</div>
 					<div class="project-description artifact-space-bottom">
 					
 					<div class="deliverable-item">
-						<span class="artifact-icon">D</span>
-						<span class="deliverable-title"><a href="/">Final presentation for design recommendations</a></span>
+						<!-- <span class="artifact-icon">D</span>
+						<span class="deliverable-title"><a href="/">Final presentation for design recommendations</a></span> !-->
+						<span class="deliverable-title">Deliverables and artifacts unavailable for this project.</span>
 					</div>
 					</div>
 					

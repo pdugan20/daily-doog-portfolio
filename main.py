@@ -5,9 +5,9 @@ import re
 import os
 import urllib
 import json
-import logging
 import jinja2
 import webapp2
+import logging
 
 from datetime import datetime
 
@@ -29,6 +29,8 @@ class ProjectEntry(db.Model):
   projectSummary = db.TextProperty()
   projectDates = db.StringProperty()
   projectCompany = db.StringProperty()
+  projectDesignProcess = db.TextProperty()
+  screenShotList = db.StringProperty()
                     
 class MainPage(webapp2.RequestHandler):
   def get(self):
@@ -54,12 +56,33 @@ class ProjectPage(webapp2.RequestHandler):
       projectSummary = project.projectSummary
       projectDates = project.projectDates
       projectCompany = project.projectCompany
-      
+      projectScreenShotList = project.screenShotList
+      projectDesignProcess = project.projectDesignProcess
+      projectId = project.projectId
+    
+    # used to create a new container for formatted screenshots
+    finalScreenShotList = []
+    
+    if len(projectScreenShotList) > 0:
+      projectScreenShotList = [e.encode('utf-8') for e in projectScreenShotList.split('-')]
+      urlPath = './resources/images/portfolio/' + projectId + '/'
+      for item in projectScreenShotList:
+        currentItem = item.split(',')
+        newThumb = urlPath + 'sm/' + currentItem[0] + '_sm.png'
+        modShot = urlPath + currentItem[0] + '.png'
+        currentScreenShotList = [currentItem[1], modShot, newThumb]
+        finalScreenShotList.append(currentScreenShotList)
+        
+    # use for testing purposes only
+    # logging.info(finalScreenShotList)  
+         
     template_values = {
       'projectName': projectName,
       'projectSummary': projectSummary,
       'projectDates': projectDates,
-      'projectCompany': projectCompany
+      'projectCompany': projectCompany,
+      'projectDesignProcess': projectDesignProcess,
+      'finalScreenShotList': finalScreenShotList
     }
     path = jinja_environment.get_template('themes/templates/project_view.html')
     self.response.out.write(path.render(template_values))
@@ -138,7 +161,7 @@ class BooksPage(webapp2.RequestHandler):
     
     # alternative to urllib
     bookShelfJsonRaw = urlfetch.fetch(bookShelfUrl)
-    logging.info(bookShelfJsonRaw.content)
+    # logging.info(bookShelfJsonRaw.content)
     
     bookShelfJsonObject = json.loads(bookShelfJsonRaw.content)
     # logging.info(bookShelfJsonObject)
