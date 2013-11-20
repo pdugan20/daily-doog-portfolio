@@ -31,6 +31,7 @@ class ProjectEntry(db.Model):
   projectCompany = db.StringProperty()
   projectDesignProcess = db.TextProperty()
   screenShotList = db.StringProperty()
+  artifactList = db.StringProperty()
                     
 class MainPage(webapp2.RequestHandler):
   def get(self):
@@ -59,6 +60,7 @@ class ProjectPage(webapp2.RequestHandler):
       projectScreenShotList = project.screenShotList
       projectDesignProcess = project.projectDesignProcess
       projectId = project.projectId
+      projectArtifactList = project.artifactList
     
     # used to create a new container for formatted screenshots
     finalScreenShotList = []
@@ -74,7 +76,15 @@ class ProjectPage(webapp2.RequestHandler):
         finalScreenShotList.append(currentScreenShotList)
         
     # use for testing purposes only
-    # logging.info(finalScreenShotList)  
+    # logging.info(finalScreenShotList)
+    
+    artifactList = []
+    if len(projectArtifactList) > 0:
+      projectArtifactList = [e.encode('utf-8') for e in projectArtifactList.split('-')]
+      for artifact in projectArtifactList:
+        currentItem = artifact.split(',')
+        currentArtifactList = [currentItem[0], currentItem[1], currentItem[2]]
+        artifactList.append(currentArtifactList)  
          
     template_values = {
       'projectName': projectName,
@@ -82,7 +92,8 @@ class ProjectPage(webapp2.RequestHandler):
       'projectDates': projectDates,
       'projectCompany': projectCompany,
       'projectDesignProcess': projectDesignProcess,
-      'finalScreenShotList': finalScreenShotList
+      'finalScreenShotList': finalScreenShotList,
+      'artifactList': artifactList
     }
     path = jinja_environment.get_template('themes/templates/project_view.html')
     self.response.out.write(path.render(template_values))

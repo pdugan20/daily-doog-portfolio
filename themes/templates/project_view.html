@@ -175,8 +175,7 @@ WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
 					
 					<div class="project-meta-heading p-artifact p-summary">SCREENSHOTS</div>
 					<div class="project-description no-picture">
-					      <div class="popup-gallery">
-					      
+					      <div class="popup-gallery">			      
 {% if finalScreenShotList %}
   {% for screenshot in finalScreenShotList %}
   <a href="{{ screenshot.1 }}" title="{{ screenshot.0 }}"><img class="project-screen" src="{{ screenshot.2 }}" width="75" height="75"></a>
@@ -184,26 +183,23 @@ WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
 {% else %}
   Screenshots are unavailable for this project.
 {% endif %}
-
 					      </div>
       				</div>
+      				
+      				<div class="project-meta-heading p-artifact">ARTIFACTS & DELIVERABLES</div>
+					<div class="project-description no-picture artifact-space-bottom">
+{% if artifactList %}
+  {% for artifact in artifactList %}
+  <div class="deliverable-item">
+  <span class="artifact-icon">{{ artifact.0 }}</span><span class="deliverable-title"><a href="{{ artifact.2 }}">{{ artifact.1 }}</a></span>
+  </div>
+  {% endfor %}
+{% else %}
+  Deliverables and artifacts unavailable for this project.
+{% endif %}					
 					
-					<div class="project-meta-heading p-artifact">ARTIFACTS & DELIVERABLES</div>
-					<div class="project-description artifact-space-bottom">
-					
-					<div class="deliverable-item">
-						<!-- <span class="artifact-icon">D</span>
-						<span class="deliverable-title"><a href="/">Final presentation for design recommendations</a></span> !-->
-						<span class="deliverable-title">Deliverables and artifacts unavailable for this project.</span>
 					</div>
-					</div>
-					
-					<div class="project-slide project-slide-image portfolio-fs-slide" style="max-width: 100%; width: 100%;">
-						
-						<!-- <img class="myimage" src="/" alt=""> !-->
-						
-						<span style="opacity: 1;" class="project-slide-description">
-					</div>
+      				
 				</div>	
 			</div>
 		</header>	

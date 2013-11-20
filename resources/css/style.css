@@ -14,7 +14,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	padding: 0;
 	border: 0;
 	outline: 0;
-	font-size: 100%;
+	/* font-size: 100%; */
 	vertical-align: baseline;
 	background: transparent;
 }
@@ -745,7 +745,7 @@ body.daisho-classic-has-welcome-text:not(.daisho-classic-has-slideshow) .welcome
 					.p-artifact { color: #202020; font-size: 70%; margin-bottom: 6px;}
 					.p-summary { float:left; clear:left; margin-top:4px; margin-bottom:5px;}
 					
-					.artifact-icon { font-family: ModernPictogramsNormal; font-size:35px; float:left; margin-right: 3px; margin-left:-3px;}
+					.artifact-icon { /* font-family: ModernPictogramsNormal */ font-family:FontAwesome; font-size:23px; float:left; min-width:26px; text-align:center; margin-right:4px; }
 					.deliverable-title { float:left; }
 					.deliverable-item {float:left; clear:left; margin-bottom:5px;}
 					
@@ -1838,5 +1838,10 @@ margin-right: auto; width: 122px; } }
 .project-img-visible { opacity: 1; transition: opacity 0.5s; -moz-transition: opacity 0.5s; -webkit-transition: opacity 0.5s; } -moz-transition: opacity 0.5s; -webkit-transition: opacity 0.5s; }
 
 image.project-img.project-img-visible.bookshelf-img { height:180px; }
-.artifact-space-bottom { float:left; margin-bottom: 20px; }
+.artifact-space-bottom { float:left; margin-bottom: 25px; }
 .project-screen { border-style:solid; border-width:1px; border-color:#202020;}
+
+
+@media (max-width: 950px){
+		.artifact-space-bottom {}
+	}
