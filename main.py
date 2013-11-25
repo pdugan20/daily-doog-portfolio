@@ -267,18 +267,22 @@ class BooksPage(webapp2.RequestHandler):
           'volumeInfo']['imageLinks']['thumbnail'
           ]
           bookThumbnail = bookThumbnail.replace('&edge=curl', '')
+          bookThumbnail = bookThumbnail.replace('&', '&amp;')
+          
         except KeyError:
           bookThumbnail = 'No thumbnail.'
         try:
           bookPreviewLink = bookDescriptionDict[
           'volumeInfo']['previewLink'
           ]
+          bookPreviewLink = bookPreviewLink.replace('&', '&amp;')
         except KeyError:
           bookPreviewLink = 'No preview link.'
         try:
           bookInfoLink = bookDescriptionDict[
           'volumeInfo']['infoLink'
           ]
+          bookInfoLink = bookInfoLink.replace('&', '&amp;')
         except KeyError:
           bookInfoLink = 'No information link.'
         try:
