@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="tn-grid-container clearfix">
+  <section class="tn-grid-container-inner clearfix">
+    <section id="options" class="clearfix">
+	  <ul id="filters" class="option-set clearfix" data-option-key="filter">
+	    <li><a href="#filter" data-option-value="*" class="selected">Everything</a></li>
+		<li><a href="#filter" data-option-value=".military">Military History</a></li>
+		<li><a href="#filter" data-option-value=".usmc">Marine Corps</a></li>
+		<li><a href="#filter" data-option-value=".design">Design</a></li>
+		<li><a href="#filter"  data-option-value=".fiction">Fiction</a></li>
+	  </ul>
+				
+	  <ul id="etc" class="clearfix">
+	    <li id="toggle-sizes" class="underline-removed">
+		<!-- where navigation should go !-->
+	    </li>
+	  </ul>
+	</section>
+			
+	<div id="container" class="clickable clearfix isotope" style="position: relative; overflow: hidden; height: 775px;">
+	<!-- <div id="book_nav">
+      <span>Currently Viewing Books: {{ currentViewList.0 }} - {{ currentViewList.1 }}</span>
+      <br><span>Books Per Shelf: 12</span>
+      <br><span>Jump to Shelf:
+      {% for link in bookShelfNavLinks %}
+        <a href="/bookshelf?startIndex={{ link.1 }}">{{ link.0 }}</a>,
+      {% endfor %}
+      </span>
+    </div> !-->
+				
+	{% for book in booksOnShelfList %}
+      <div class="element element-small bookshelf-element {{ book.9 }}">
+	    <a class="thumbnail-link" href="{{ book.5 }}"></a>	
+		<p class="number">7</p>
+		<div class="thumbnail-meta-data-wrapper">
+		  <div class="symbol bookshelf-symbol">
+		    <a class="thumbnail-project-link bookshelf-link">{{ book.0 }}</a>
+		  </div>
+		</div>
+		<div class="name">{{ book.1.0 }}</div>
+		<div class="categories">{{ book.8 }} - {{ book.2 }}</div>
+		<p class="id" style="display:none;">0</p>
+		<div style="background-color: #6e5baa; width: 100%; height: 100%;" class="thumbnail-hover"></div>
+		<img class="project-img project-img-visible bookshelf-img" src="{{ book.3 }}" alt="{{ book.6 }}">
+		<div style="background-color: #6e5baa"></div>
+	  </div>
+    {% endfor %}
+    
+    </div>
+  </section>
+</div>
+{% endblock %}

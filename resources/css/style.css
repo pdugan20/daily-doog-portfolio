@@ -596,7 +596,7 @@ body.daisho-classic-has-welcome-text:not(.daisho-classic-has-slideshow) .welcome
 	.welcome-text a { text-decoration: underline; }
 
 /* #content { width: 100%; padding-top: 18px; padding-bottom: 30px; float: left; } */
-.tn-grid-container-inner { width: 100%; padding-top: 18px; padding-bottom: 30px; float: left; }
+.tn-grid-container-inner { width: 100%; padding-top: 18px; padding-bottom: 10px; float: left; }
 /* ARCHIVE, SEARCH, BLOG, SINGLE POST */
 .single-post .single-template-wrapper { padding-top: 115px; }
 .archive .archive-template-wrapper { padding-top: 115px; }
@@ -811,6 +811,7 @@ body.daisho-classic-has-welcome-text:not(.daisho-classic-has-slideshow) .welcome
 		.my-picture { float:left; padding-right:25px; /* padding-bottom:2%; */}
 		
 		.all-about-me { }
+		@media (max-width: 950px){ .all-about-me { margin-bottom:0px; } }
 		
 		@media (max-width: 850px){ 
 			.content-projectc.about { margin-top:0px; }

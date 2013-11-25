@@ -18,7 +18,10 @@ from google.appengine.ext.db import GqlQuery
 from google.appengine.api import urlfetch
 
 jinja_environment = jinja2.Environment(
-  loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
+loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
+
+jinja_environment = jinja2.Environment(
+loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'themes/templates')))
 
 # Global variable passed into empty templates  
 emptyList = []
@@ -35,10 +38,22 @@ class ProjectEntry(db.Model):
                     
 class MainPage(webapp2.RequestHandler):
   def get(self):
+    navDict = {
+      'aboutMe': '',
+      'blog': '',
+      'portfolio': 'current_page_item current-menu-item',
+      'readingList': ''
+    };
+    bodyClass = 'home blog responsive flow-skin-0 daisho-portfolio body-visible'
+    interactionType = 'portfolio'
+    
     template_values = {
-      'emptyList': emptyList
+      'emptyList': emptyList,
+      'bodyClass': bodyClass,
+      'navDict': navDict,
+      'interactionType': interactionType
     }
-    path = jinja_environment.get_template('themes/templates/index.html')
+    path = jinja_environment.get_template('index_ext.html')
     self.response.out.write(path.render(template_values))
     
 class ProjectPage(webapp2.RequestHandler):
@@ -51,6 +66,16 @@ class ProjectPage(webapp2.RequestHandler):
       "SELECT * FROM ProjectEntry WHERE projectId ='" + 
       str(projectName) + "'"
     )
+    
+    navDict = {
+      'aboutMe': '',
+      'blog': '',
+      'portfolio': 'current_page_item current-menu-item',
+      'readingList': ''
+    };
+    
+    bodyClass = 'home blog responsive flow-skin-0 body-visible'
+    interactionType = 'portfolio'
     
     for project in projectData:
       projectName = project.projectName
@@ -93,25 +118,32 @@ class ProjectPage(webapp2.RequestHandler):
       'projectCompany': projectCompany,
       'projectDesignProcess': projectDesignProcess,
       'finalScreenShotList': finalScreenShotList,
-      'artifactList': artifactList
+      'artifactList': artifactList,
+      'navDict': navDict,
+      'bodyClass': bodyClass,
+      'interactionType': interactionType
     }
-    path = jinja_environment.get_template('themes/templates/project_view.html')
-    self.response.out.write(path.render(template_values))
-    
-class BlogPage(webapp2.RequestHandler):
-  def get(self):
-    template_values = {
-      'emptyList': emptyList
-    }
-    path = jinja_environment.get_template('themes/templates/blog.html')
+    path = jinja_environment.get_template('project_ext.html')
     self.response.out.write(path.render(template_values))
     
 class AboutPage(webapp2.RequestHandler):
   def get(self):
+    navDict = {
+      'aboutMe': 'current_page_item current-menu-item',
+      'blog': '',
+      'portfolio': '',
+      'readingList': ''
+    };
+    bodyClass = 'home blog responsive flow-skin-0 body-visible'
+    interactionType = 'portfolio'
+    
     template_values = {
-      'emptyList': emptyList
+      'emptyList': emptyList,
+      'navDict': navDict,
+      'bodyClass': bodyClass,
+      'interactionType': interactionType
     }
-    path = jinja_environment.get_template('themes/templates/about.html')
+    path = jinja_environment.get_template('about_ext.html')
     self.response.out.write(path.render(template_values))
     
 class BooksPage(webapp2.RequestHandler):
@@ -128,6 +160,15 @@ class BooksPage(webapp2.RequestHandler):
       maxResults = self.request.get('maxResults')
     else:
       maxResults = 15
+      
+    navDict = {
+      'aboutMe': '',
+      'blog': '',
+      'portfolio': '',
+      'readingList': 'current_page_item current-menu-item'
+    };
+    bodyClass = 'home blog responsive flow-skin-0 daisho-portfolio body-visible'
+    interactionType = 'bookshelf'
       
     myBooksDict = {
       '7skCmLdArBEC': 'military',
@@ -312,15 +353,17 @@ class BooksPage(webapp2.RequestHandler):
       'bookShelfAvgPubYear': bookShelfAvgPubYear,
       'bookShelfNavLinks': bookShelfNavLinks,
       'currentViewList': currentViewList,
-      'bookShelfJsonObject': bookShelfJsonObject
+      'bookShelfJsonObject': bookShelfJsonObject,
+      'navDict': navDict,
+      'bodyClass': bodyClass,
+      'interactionType': interactionType
     }
 
-    path = jinja_environment.get_template('themes/templates/books-new.html')
+    path = jinja_environment.get_template('books_ext.html')
     self.response.out.write(path.render(template_values))
 
 application = webapp2.WSGIApplication([
   ('/project', ProjectPage),
-  ('/blog', BlogPage),
   ('/portfolio', MainPage),
   ('/books', BooksPage),
   ('/', AboutPage)

@@ -1,19 +1,16 @@
 <!DOCTYPE html>
-<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" class="no-js">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<!--[if lt IE 9]>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=.75, maximum-scale=.75" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-title" content="Daily Doog :: Portfolio of Patrick Dugan">
 <title>Daily Doog :: Portfolio of Patrick Dugan</title>
-
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> !-->
-<!-- <meta name="apple-mobile-web-app-status-bar-style" content="black"> !-->
-
-<!--[if lt IE 9]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-<![endif]-->
 
 <!--
 WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
@@ -82,41 +79,38 @@ WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
 <link rel="shortcut icon" href="./resources/images/favicon.png">
 <link rel="stylesheet" type="text/css" media="screen" href="./resources/css/style.css">
 <link rel="stylesheet" type="text/css" media="all" href="./resources/css/stylecache.css" id="shortcodesstylecache-css">
+{% block lightboxCss %}{% endblock %}
 
-<!--  <link href="./resources/css/dosis.css" rel="stylesheet" type="text/css">
-<link href="./resources/css/lato.css" rel="stylesheet" type="text/css">
-<link href="./resources/css/opensans.css" rel="stylesheet" type="text/css"> !-->
 
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,100italic,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,700,600,300' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700' rel='stylesheet' type='text/css'>
 
-<!-- <script type="text/javascript" src="http://www.dailydoog.com/resources/js/jquery.js"></script> !-->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 </head>
 
-<body class="home blog responsive flow-skin-0 body-visible " screen_capture_injected="true">
+<body class="{{ bodyClass }}">
 
 <header id="header">
 	<div class="inner clearfix">
 		<div id="logo-image"><a title="Daily Doog :: Portfolio of Patrick Dugan" href="/">
-		<img src="./resources/images/svg/dailydoog.svg"></a>
+		<img src="./resources/images/svg/dailydoog.svg" alt="Daily Doog logo"></a>
 		</div>		
 		
 		<nav id="navigation">
 			<div class="menu-main-menu-container">
 			  <ul id="menu" class="flow_smart_menu">
-					<li class="current-menu-item current_page_item">
+					<li class="{{ navDict.aboutMe }}">
 						<a href="./">
 						<span class="menu-icon">f</span>
 						<span>About Me</span></a>
 					</li>
-					<li>
+					<li class="{{ navDict.blog }}">
 						<a href="http://blog.dailydoog.com">
 						<span class="menu-icon">r</span>
 						<span>Blog</span></a>
 					</li>
-					<li>
+					<li class="{{ navDict.portfolio }}">
 					  <a href="./portfolio">
 						<span class="menu-icon">W</span>
 						<span>Portfolio</span></a>
@@ -125,7 +119,7 @@ WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
 						<a href="./resources/resume/patdugan_resume.pdf">
 						<span class="menu-icon">K</span><span>Resume</span></a>
 					</li>
-					<li>
+					<li class="{{ navDict.readingList }}">
 						<a href="./books">
 						<span class="menu-icon">B</span>
 						<span>Reading List</span></a>
@@ -145,48 +139,10 @@ WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
 		</div>
 	</div>
 </header>
-	
-<!-- begin project description !-->
-<div class="page-template-wrapper blog-extra full-content-fix">
-	<header class="page-header">
-			<div class="page-description">
-				
-				<div id="complete-blog">
-				
-				<!-- begin blog post !-->
-				<div class="blog-all">
-				
-					<div class="blog-main-content content-full-page">
-						
-						<div class="blog-post-article content-small-top">
-							<!-- start actual page content !-->
-							<div class="my-picture"><img class="my-pic-fix" src="./resources/images/me-small.jpg"></div>
-								<div class="all-about-me">
-					Hi! My name is Patrick Dugan and I'm currently a graduate student at the <a href="http://www.uw.edu">University of Washington</a> pursuing a degree in <a href="http://mhcid.washington.edu/">Human Computer Interaction + Design</a>. I'm also a member of the <a href="http://dub.washington.edu/">dub</a> group. Before returning to school I worked at Google in an internal development and data analytics role. 
-					
-					<br><br>I’m a west-coast transplant via way of Buffalo, NY and I earned my undergraduate degree in Information Systems from the University of Washington.
-					
-					<br><br>I’m especially passionate about the impacts of wearable computing devices and have been an avid Google Glass user since late 2012.
-					
-					<br><br>In my free time I love to run, swim, bike, camp, and hike. If you’d like to learn more about me, start by checking out my <a href="./resources/resume/patdugan_resume.pdf">resume</a>, <a href="./portfolio">portfolio</a>, or <a href="https://plus.google.com/u/0/104276451649083522843/posts">google+</a> page.
+		
+	{% block content %}{% endblock %}
 
-
-						<!-- end actual page content !-->
-							</div>
-						</div>
-					
-				</div>
-			</div>
-			<!-- end blog post !-->
-			
-			</div>
-					
-			</div>
-		</header>	
-	</div>
-<!-- end project description !-->
-
-	<div style="clear:both;"></div>
+<div style="clear:both;"></div>
 	<footer id="footer">
 		<div class="inner">
 			<div class="container_12">
@@ -241,17 +197,17 @@ WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
 										
 			<div class="menu-mobile-menu-container">
 				<ul id="mobile_app_menu" class="menu">
-					<li class="current-menu-item current_page_item">
+					<li class="{{ navDict.aboutMe }}">
 						<a href="./">
 						<span class="menu-icon icon-mod-about">f</span>
 						<span>About Me</span></a>
 					</li>
-					<li class="menu-item">
+					<li class="menu-item {{ navDict.blog }}">
 						<a href="http://blog.dailydoog.com">
 						<span class="menu-icon icon-mod-blog">r</span>
 						<span>Blog</span></a>
 					</li>
-					<li class="menu-item">
+					<li class="menu-item {{ navDict.portfolio }}">
 						<a href="./portfolio">
 						<span class="menu-icon icon-mod-portfolio">W</span>
 						<span>Portfolio</span></a>
@@ -261,7 +217,7 @@ WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
 						<span class="menu-icon icon-mod-resume">K</span>
 						<span>Resume</span></a>
 					</li>
-					<li class="menu-item">
+					<li class="menu-item {{ navDict.readingList }}">
 						<a href="./books">
 						<span class="menu-icon icon-mod-book">B</span>
 						<span>Reading List</span></a>
@@ -283,10 +239,7 @@ WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
 <script type="text/javascript" src="./resources/js/scripts.js"></script>
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
-<!-- <script type="text/javascript" src="./resources/js/jquery.ui.core.min.js"></script>
-<script type="text/javascript" src="./resources/js/jquery.ui.widget.min.js"></script>
-<script type="text/javascript" src="./resources/js/jquery.ui.accordion.min.js"></script>
-<script type="text/javascript" src="./resources/js/jquery.ui.tabs.min.js"></script> !-->
+{% block lightboxJs %}{% endblock %}
 
 </body>
 </html>
