@@ -869,7 +869,7 @@ body.daisho-classic-has-welcome-text:not(.daisho-classic-has-slideshow) .welcome
 		.gplus-follow { float: right; margin-right:5px;}
 		.comment-margin { margin-bottom: 33px; }
 		
-		.content-small-top { line-height:135%; width:100%;}
+		.content-small-top { line-height:137%; width:100%;}
 		
 		div#complete-blog { width:100%; }
 		
@@ -1846,3 +1846,44 @@ image.project-img.project-img-visible.bookshelf-img { height:180px; }
 @media (max-width: 950px){
 		.artifact-space-bottom {}
 	}
+	
+/* footer nav specific */
+.footer-nav-title {
+  font-size:110%;
+  font-weight:600;
+  text-transform: uppercase;
+}
+
+.footer-nav-project {
+  font-size:90%;
+  line-height:150%;
+}
+
+.footer-nav-col {
+  margin-top:8px;
+  margin-bottom:8px;
+  float:left;
+  width:230px;
+}
+
+.footer-col-last {
+  width:50px;
+}
+
+.footer-nav-div {
+  color:#D9DCDD;
+}
+
+.footer-nav-div:hover {
+  color:#787882;
+}
+
+.footer-nav-div a:hover {
+  color:#6D5AAA;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-current-project {
+  font-weight: 600;
+}

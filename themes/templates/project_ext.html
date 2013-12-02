@@ -24,53 +24,152 @@
 					
 					<div class="project-meta-heading p-artifact p-summary">DESIGN PROCESS FOLLOWED</div>
 					<div class="project-description no-picture">
-{% if projectDesignProcess %}
-  {{ projectDesignProcess|safe }}
-{% else %}
-  I'm still typing up the design process that was used for this particular project.				
-{% endif %}					
+						{% if projectDesignProcess %}
+  							{{ projectDesignProcess|safe }}
+						{% else %}
+  							<span>I'm still typing up the design process that was used for this particular project.</span>			
+						{% endif %}					
 					</div>
 					
 					<div class="project-meta-heading p-artifact p-summary">SCREENSHOTS</div>
 					<div class="project-description no-picture">
-					      <div class="popup-gallery">			      
-{% if finalScreenShotList %}
-  {% for screenshot in finalScreenShotList %}
-  <a href="{{ screenshot.1 }}" title="{{ screenshot.0 }}"><img class="project-screen" src="{{ screenshot.2 }}" width="75" height="75"></a>
-  {% endfor %}
-{% else %}
-  Screenshots are unavailable for this project.
-{% endif %}
+						<div class="popup-gallery">			      
+							{% if finalScreenShotList %}
+  								{% for screenshot in finalScreenShotList %}
+  									<a href="{{ screenshot.1 }}" title="{{ screenshot.0 }}">
+  									<img class="project-screen" src="{{ screenshot.2 }}" width="75" height="75"></a>
+  								{% endfor %}
+							{% else %}
+  								<span>Screenshots are unavailable for this project.</span>
+							{% endif %}
 					      </div>
       				</div>
       				
       				<div class="project-meta-heading p-artifact">ARTIFACTS & DELIVERABLES</div>
 					<div class="project-description no-picture artifact-space-bottom">
-{% if artifactList %}
-  {% for artifact in artifactList %}
-  <div class="deliverable-item">
-  <span class="artifact-icon">{{ artifact.0 }}</span><span class="deliverable-title"><a href="{{ artifact.2 }}">{{ artifact.1 }}</a></span>
-  </div>
-  {% endfor %}
-{% else %}
-  Deliverables and artifacts unavailable for this project.
-{% endif %}					
-					
-					</div>
-      				
-				</div>	
-			</div>
-		</header>	
-	</div>
-	<!-- end project description !-->
+					{% if artifactList %}
+  						{% for artifact in artifactList %}
+  							<div class="deliverable-item">
+  								<!-- <span class="artifact-icon">{{ artifact.0 }}</span> !-->
+  								<span class="deliverable-title"><a href="{{ artifact.2 }}">{{ artifact.1 }}</a></span>
+  							</div>
+  						{% endfor %}
+					{% else %}
+  						<span>Deliverables and artifacts unavailable for this project.</span>
+					{% endif %}	
+									
+				</div>
+			</div>	
+		</div>
+	</header>	
+</div>
+<!-- end project description !-->
 {% endblock %}
 
 {% block lightboxJs %}
 <script type="text/javascript" src="./resources/js/zepto.min.js"></script>
 <script type="text/javascript" src="./resources/js/jquery.magnific-popup.min.js"></script>
 <script type="text/javascript" src="./resources/js/doog-lightbox.js"></script>
+<script type="text/javascript" src="./resources/js/footer-nav.js"></script>
 {% endblock %}
 
 {% block lightboxCss %}
 <link rel="stylesheet" type="text/css" media="screen" href="./resources/css/lightbox.css">
+{% endblock %}
+
+{% block footerNav %}
+<div class="container_12">
+  <div class="grid_12 grid_not_responsive footer-nav-div">
+    
+    <!-- start col 1 !-->
+    <div class="footer-nav-col">
+      <span class="footer-nav-title">Desktop</span>
+      <ul class="footer-nav-list">
+	    <li class="footer-nav-project">
+		  <a href="/project?projectName=transparency-report"><span id="transparency-report">Google Transparency Report</span></a>
+		</li>
+		<li class="footer-nav-project">
+		  <a href="/project?projectName=mhiguera"><span id="mhiguera">Marie Higuera Law Offices</span></a>
+		</li>
+		<li class="footer-nav-project">
+		  <a href="/project?projectName=lm-prototypes"><span id="lm-prototypes">LM.com prototyping</span></a>
+		</li>
+		<li class="footer-nav-project">
+		  <a href="/project?projectName=buffalo-green-art"><span id="buffalo-green-art">Buffalo Green Art</span></a>
+		</li>
+		<li class="footer-nav-project">
+		  <a href="/project?projectName=event-connect"><span id="event-connect">Event Connect</span></a>
+		</li>
+		<li class="footer-nav-project">
+		  <a href="/project?projectName=google-wallet"><span id="google-wallet">Google Wallet</span></a>
+		</li>
+      </ul>
+    </div>
+    <!-- end col 1 !-->
+    
+    <!-- start col 2 !-->
+    <div class="footer-nav-col">
+      <span class="footer-nav-title">Digital Design</span>
+      <ul class="footer-nav-list">
+	    <li class="footer-nav-project">
+		  <a href="/project?projectName=healthy-food"><span id="healthy-food">Healthy Food in a Box</span></a>
+		</li>
+		<li class="footer-nav-project">
+		  <a href="/project?projectName=a330-pfd"><span id="a330-pfd">Airbus A330 PFD</span></a>
+		</li>
+		<li class="footer-nav-project">
+		  <a href="/project?projectName=academy-of-art"><span id="academy-of-art">Academy of Art</span></a>
+		</li>
+      </ul>
+    </div>
+    <!-- end col 2 !-->
+    
+    <!-- start col 3 !-->
+    <div class="footer-nav-col">
+      <span class="footer-nav-title">I. Architecture</span>
+      <ul class="footer-nav-list">
+	    <li class="footer-nav-project">
+		  <a href="/project?projectName=lm-nav"><span id="lm-nav">LM.com navigation</span></a>
+		</li>
+		<li class="footer-nav-project">
+		  <a href="/project?projectName=lm-rss"><span id="lm-rss">LM.com RSS</span></a>
+		</li>
+      </ul>
+    </div>
+    <!-- end col 3 !-->
+    
+    <!-- start col 4 !-->
+    <div class="footer-nav-col">
+      <span class="footer-nav-title">Mobile</span>
+      <ul class="footer-nav-list">
+	    <li class="footer-nav-project">
+		  <a href="/project?projectName=mobile-claims"><span id="mobile-claims">Liberty Mutual Mobile</span></a>
+		</li>
+		<li class="footer-nav-project">
+		  <a href="/project?projectName=usmc-pro-fitness"><span id="usmc-pro-fitness">USMC ProFitness</span></a>
+		</li>
+      </ul>
+    </div>
+    <!-- end col 4 !-->
+    
+    <!-- start col 5 !-->
+    <div class="footer-nav-col footer-col-last">
+      <span class="footer-nav-title">Wearable</span>
+      <ul class="footer-nav-list">
+	    <li class="footer-nav-project">
+		  <a href="/project?projectName=google-glass"><span id="google-glass">HuskyGlass</span></a>
+		</li>
+      </ul>
+    </div>
+    <!-- end col 5 !-->
+  
+  </div>
+  <div class="grid_12">
+    <ul class="footer-widget-container">
+	  <li id="text-8" class="widget widget_text">
+	    <div class="textwidget"><hr></div>
+	  </li>
+	</ul>
+  </div>
+</div>
 {% endblock %}
