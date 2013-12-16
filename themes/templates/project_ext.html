@@ -22,14 +22,14 @@
 				    <div class="project-meta-heading p-artifact p-summary">PROJECT SUMMARY</div>
 					<div class="project-description no-picture">{{ projectSummary|safe }}</div>
 					
-					<div class="project-meta-heading p-artifact p-summary">DESIGN PROCESS FOLLOWED</div>
+					<!-- <div class="project-meta-heading p-artifact p-summary">DESIGN PROCESS FOLLOWED</div>
 					<div class="project-description no-picture">
 						{% if projectDesignProcess %}
   							{{ projectDesignProcess|safe }}
 						{% else %}
   							<span>I'm still typing up the design process that was used for this particular project.</span>			
 						{% endif %}					
-					</div>
+					</div> !-->
 					
 					<div class="project-meta-heading p-artifact p-summary">SCREENSHOTS</div>
 					<div class="project-description no-picture">
@@ -78,7 +78,7 @@
 {% endblock %}
 
 {% block footerNav %}
-<div class="container_12">
+<div class="container_12 project-nav-footer">
   <div class="grid_12 grid_not_responsive footer-nav-div">
     
     <!-- start col 1 !-->
@@ -90,9 +90,6 @@
 		</li>
 		<li class="footer-nav-project">
 		  <a href="/project?projectName=mhiguera"><span id="mhiguera">Marie Higuera Law Offices</span></a>
-		</li>
-		<li class="footer-nav-project">
-		  <a href="/project?projectName=lm-prototypes"><span id="lm-prototypes">LM.com prototyping</span></a>
 		</li>
 		<li class="footer-nav-project">
 		  <a href="/project?projectName=buffalo-green-art"><span id="buffalo-green-art">Buffalo Green Art</span></a>
@@ -109,36 +106,25 @@
     
     <!-- start col 2 !-->
     <div class="footer-nav-col">
-      <span class="footer-nav-title">Digital Design</span>
+      <span class="footer-nav-title">Interaction Design</span>
       <ul class="footer-nav-list">
-	    <li class="footer-nav-project">
+        <li class="footer-nav-project">
+		  <a href="/project?projectName=smartcar"><span id="smartcar">Smart Car User-Interface</span></a>
+		</li>
+        <li class="footer-nav-project">
 		  <a href="/project?projectName=healthy-food"><span id="healthy-food">Healthy Food in a Box</span></a>
+		</li>
+        <li class="footer-nav-project">
+		  <a href="/project?projectName=lm-prototypes"><span id="lm-prototypes">LibertyMutual.com</span></a>
 		</li>
 		<li class="footer-nav-project">
 		  <a href="/project?projectName=a330-pfd"><span id="a330-pfd">Airbus A330 PFD</span></a>
-		</li>
-		<li class="footer-nav-project">
-		  <a href="/project?projectName=academy-of-art"><span id="academy-of-art">Academy of Art</span></a>
 		</li>
       </ul>
     </div>
     <!-- end col 2 !-->
     
     <!-- start col 3 !-->
-    <div class="footer-nav-col">
-      <span class="footer-nav-title">I. Architecture</span>
-      <ul class="footer-nav-list">
-	    <li class="footer-nav-project">
-		  <a href="/project?projectName=lm-nav"><span id="lm-nav">LM.com navigation</span></a>
-		</li>
-		<li class="footer-nav-project">
-		  <a href="/project?projectName=lm-rss"><span id="lm-rss">LM.com RSS</span></a>
-		</li>
-      </ul>
-    </div>
-    <!-- end col 3 !-->
-    
-    <!-- start col 4 !-->
     <div class="footer-nav-col">
       <span class="footer-nav-title">Mobile</span>
       <ul class="footer-nav-list">
@@ -148,17 +134,34 @@
 		<li class="footer-nav-project">
 		  <a href="/project?projectName=usmc-pro-fitness"><span id="usmc-pro-fitness">USMC ProFitness</span></a>
 		</li>
+		<li class="footer-nav-project">
+		  <a href="/project?projectName=google-glass"><span id="google-glass">HuskyGlass</span></a>
+		</li>
+      </ul>
+    </div>
+    <!-- end col 3 !-->
+    
+    <!-- start col 4 !-->
+    <div class="footer-nav-col">
+      <span class="footer-nav-title">Info Architecture</span>
+      <ul class="footer-nav-list">
+	    <li class="footer-nav-project">
+		  <a href="/project?projectName=lm-nav"><span id="lm-nav">LM.com navigation</span></a>
+		</li>
+		<li class="footer-nav-project">
+		  <a href="/project?projectName=lm-rss"><span id="lm-rss">LM.com RSS</span></a>
+		</li>
       </ul>
     </div>
     <!-- end col 4 !-->
     
     <!-- start col 5 !-->
     <div class="footer-nav-col footer-col-last">
-      <span class="footer-nav-title">Wearable</span>
+      <span class="footer-nav-title">Visual Design</span>
       <ul class="footer-nav-list">
 	    <li class="footer-nav-project">
-		  <a href="/project?projectName=google-glass"><span id="google-glass">HuskyGlass</span></a>
-		</li>
+		  <a href="/project?projectName=academy-of-art"><span id="academy-of-art">Academy of Art</span></a>
+		</li>  
       </ul>
     </div>
     <!-- end col 5 !-->

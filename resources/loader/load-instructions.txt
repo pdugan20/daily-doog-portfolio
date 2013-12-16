@@ -6,8 +6,3 @@ appcfg.py upload_data --config_file=GitHub/doogport/bulkloader.yaml --filename=G
 
 production:
 appcfg.py upload_data --config_file=GitHub/doogport/bulkloader.yaml --filename=GitHub/doogport/resources/loader/projects.csv --kind=ProjectEntry --url=http://dailydoog.appspot.com/_ah/remote_api --email=dugan.pat@gmail.com
-
-temp html remove:
-<br><br><a href=""https://play.google.com/store/apps/details?id=com.lmig.pm.internet.mobile.android.libertymutual""><img alt=""Android app on Google Play"" src=""https://developer.android.com/images/brand/en_app_rgb_wo_45.png"" /></a><br><a href=""https://itunes.apple.com/us/app/liberty-mutual-mobile/id397404511?mt=8""><img src=""http://public.libertymutual-cdn.com/MediaBin/PersonalMarket/SharedImages/app_store.gif?version=33122106156""/></a>
-
-<br><br><a href=""https://play.google.com/store/apps/details?id=com.patdugan.usmcprofitness""><img src=""https://developer.android.com/images/brand/en_app_rgb_wo_45.png""/></a>

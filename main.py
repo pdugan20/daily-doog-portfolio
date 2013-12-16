@@ -44,7 +44,7 @@ class MainPage(webapp2.RequestHandler):
       'portfolio': 'current_page_item current-menu-item',
       'readingList': ''
     };
-    bodyClass = 'home blog responsive flow-skin-0 daisho-portfolio body-visible'
+    bodyClass = 'home blog responsive flow-skin-0 doog-portfolio body-visible'
     interactionType = 'portfolio'
     
     template_values = {
@@ -167,7 +167,7 @@ class BooksPage(webapp2.RequestHandler):
       'portfolio': '',
       'readingList': 'current_page_item current-menu-item'
     };
-    bodyClass = 'home blog responsive flow-skin-0 daisho-portfolio body-visible'
+    bodyClass = 'home blog responsive flow-skin-0 doog-portfolio body-visible'
     interactionType = 'bookshelf'
       
     myBooksDict = {
