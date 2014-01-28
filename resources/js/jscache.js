@@ -2006,27 +2006,7 @@
 
 
 })( jQuery );
-function maToggleMenu(){
-	if(jQuery('#mobile_app_menu').hasClass('mobile-menu-open-visible')){
-		jQuery('.mobile-menu-open-wrapper').removeClass('mobile-menu-open-wrapper-active');
-		jQuery('#mobile_app_menu').removeClass('mobile-menu-open-visible');
-		
-		/* Fixed */
-		jQuery('body').removeClass('mobile-menu-open-fixed');
-		jQuery('.mobile_app_menu_main_wrapper').removeClass('mobile_app_menu_main_wrapper-visible');
-	}else{
-		/* jQuery('meta[name*="viewport"]').attr('content', 'user-scalable=yes, width=635'); */
-		jQuery('.mobile-menu-open-wrapper').addClass('mobile-menu-open-wrapper-active');
-		jQuery('#mobile_app_menu').addClass('mobile-menu-open-visible');
-		
-		/* Fixed */
-		jQuery('body').addClass('mobile-menu-open-fixed');
-		jQuery('.mobile_app_menu_main_wrapper').addClass('mobile_app_menu_main_wrapper-visible');
-		
-		//jQuery(window).trigger('resize');
-		//jQuery('html').css('width', 200).css('width', '');
-	}
-}
+
 jQuery(document).ready(function(){
 // Shorten texts in overflowed paragraphs to emulate Operas text-overflow: -o-ellipsis-lastline
 /* jQuery('.element .symbol').each(function(i, e){
@@ -2057,22 +2037,7 @@ jQuery(document).ready(function(){
 	  
 });
 
-	jQuery('.mobile_app_menu_main_wrapper .header-back-to-blog-link').on('click', function(){
-		maToggleMenu();
-	});
 	
-	jQuery('.mobile-menu-open-wrapper').click(function(){
-		maToggleMenu();
-	});
-	jQuery('.mobile-menu-settings-wrapper').click(function(){
-		if(jQuery('body').hasClass('mobile-app-settings-panel')){
-			jQuery('body').removeClass('mobile-app-settings-panel');
-			jQuery('.mobile_app_settings_wrapper').removeClass('mobile_app_settings_wrapper-visible');
-		}else{
-			jQuery('body').addClass('mobile-app-settings-panel');
-			jQuery('.mobile_app_settings_wrapper').addClass('mobile_app_settings_wrapper-visible');
-		}
-	});
 });
 /*! A fix for the iOS orientationchange zoom bug. Script by @scottjehl, rebound by @wilto.MIT / GPLv2 License.*//* (function(a){function m(){d.setAttribute("content",g),h=!0}function n(){d.setAttribute("content",f),h=!1}function o(b){l=b.accelerationIncludingGravity,i=Math.abs(l.x),j=Math.abs(l.y),k=Math.abs(l.z),(!a.orientation||a.orientation===180)&&(i>7||(k>6&&j<8||k<8&&j>6)&&i>5)?h&&n():h||m()}var b=navigator.userAgent;if(!(/iPhone|iPad|iPod/.test(navigator.platform)&&/OS [1-5]_[0-9_]* like Mac OS X/i.test(b)&&b.indexOf("AppleWebKit")>-1))return;var c=a.document;if(!c.querySelector)return;var d=c.querySelector("meta[name=viewport]"),e=d&&d.getAttribute("content"),f=e+",maximum-scale=1",g=e+",maximum-scale=10",h=!0,i,j,k,l;if(!d)return;a.addEventListener("orientationchange",m,!1),a.addEventListener("devicemotion",o,!1)})(this); */
 

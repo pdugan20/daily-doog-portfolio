@@ -46,13 +46,10 @@
       				</div>
       				
       				<div class="project-meta-heading p-artifact">ARTIFACTS & DELIVERABLES</div>
-					<div class="project-description no-picture artifact-space-bottom">
+					<div class="project-description no-picture artifact-footer">
 					{% if artifactList %}
   						{% for artifact in artifactList %}
-  							<div class="deliverable-item">
-  								<!-- <span class="artifact-icon">{{ artifact.0 }}</span> !-->
-  								<span class="deliverable-title"><a href="{{ artifact.2 }}">{{ artifact.1 }}</a></span>
-  							</div>
+						  <a href="{{ artifact.2 }}">{{ artifact.1 }}</a></span><br>
   						{% endfor %}
 					{% else %}
   						<span>Deliverables and artifacts unavailable for this project.</span>
@@ -104,10 +101,36 @@
     </div>
     <!-- end col 1 !-->
     
+    <!-- start col 4 !-->
+    <div class="footer-nav-col">
+      <span class="footer-nav-title">Research</span>
+      <ul class="footer-nav-list">
+        <li class="footer-nav-project">
+		  <a href="/project?projectName=lm-rss"><span id="lm-rss">LM.com RSS Recommendations</span></a>
+		</li>
+		<li class="footer-nav-project">
+		  <a href="/project?projectName=reading"><span id="reading">UW EE Reading Difficulty</span></a>
+		</li>
+		<li class="footer-nav-project">
+		  <a href="/project?projectName=cloud-platform"><span id="cloud-platform">Google Cloud Platform</span></a>
+		</li>
+		<li class="footer-nav-project">
+		  <a href="/project?projectName=lm-nav"><span id="lm-nav">LM.com Card Sort</span></a>
+		</li>
+		<li class="footer-nav-project">
+		  <a href="/project?projectName=google-glass"><span id="google-glass">HuskyGlass</span></a>
+		</li>
+      </ul>
+    </div>
+    <!-- end col 4 !-->
+    
     <!-- start col 2 !-->
     <div class="footer-nav-col">
       <span class="footer-nav-title">Interaction Design</span>
       <ul class="footer-nav-list">
+        <li class="footer-nav-project">
+		  <a href="/project?projectName=mhcid-prototyping"><span id="mhcid-prototyping">MHCI+D Prototyping Studio</span></a>
+		</li>
         <li class="footer-nav-project">
 		  <a href="/project?projectName=smartcar"><span id="smartcar">Smart Car User-Interface</span></a>
 		</li>
@@ -134,26 +157,9 @@
 		<li class="footer-nav-project">
 		  <a href="/project?projectName=usmc-pro-fitness"><span id="usmc-pro-fitness">USMC ProFitness</span></a>
 		</li>
-		<li class="footer-nav-project">
-		  <a href="/project?projectName=google-glass"><span id="google-glass">HuskyGlass</span></a>
-		</li>
       </ul>
     </div>
     <!-- end col 3 !-->
-    
-    <!-- start col 4 !-->
-    <div class="footer-nav-col">
-      <span class="footer-nav-title">Info Architecture</span>
-      <ul class="footer-nav-list">
-	    <li class="footer-nav-project">
-		  <a href="/project?projectName=lm-nav"><span id="lm-nav">LM.com navigation</span></a>
-		</li>
-		<li class="footer-nav-project">
-		  <a href="/project?projectName=lm-rss"><span id="lm-rss">LM.com RSS</span></a>
-		</li>
-      </ul>
-    </div>
-    <!-- end col 4 !-->
     
     <!-- start col 5 !-->
     <div class="footer-nav-col footer-col-last">
