@@ -56,6 +56,14 @@ class MainPage(webapp2.RequestHandler):
     path = jinja_environment.get_template('index_ext.html')
     self.response.out.write(path.render(template_values))
     
+class BlogRedirect(webapp2.RequestHandler):
+  def get(self):
+    self.redirect('http://blog.dailydoog.com')
+    
+class PortfolioRedirect(webapp2.RequestHandler):
+  def get(self):
+    self.redirect('http://www.dailydoog.com')
+    
 class ProjectPage(webapp2.RequestHandler):
   def get(self):
     projectName = None   
@@ -368,9 +376,11 @@ class BooksPage(webapp2.RequestHandler):
 
 application = webapp2.WSGIApplication([
   ('/project', ProjectPage),
-  ('/portfolio', MainPage),
+  ('/about', AboutPage),
   ('/books', BooksPage),
-  ('/', AboutPage)
+  ('/blog', BlogRedirect),
+  ('/portfolio', PortfolioRedirect),
+  ('/', MainPage)
 ], debug=True)
 
 def main():
