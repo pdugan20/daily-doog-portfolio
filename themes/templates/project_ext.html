@@ -8,45 +8,35 @@
 				<div class="content-projectc">
 						<div class="project-meta">
 							<div class="project-meta-data project-date clearfix">
+							
+							{% if finalScreenShotList %}
+							<div class="project-v2-screenshots">
+								<div class="project-sub-head screenshot-mod">Screenshots</div>
+									<div class="popup-gallery">			      
+									
+									{% for screenshot in finalScreenShotList %}
+  									<div class="screenshot-box">
+  									<a href="{{ screenshot.1 }}" title="{{ screenshot.0 }}">
+  									<img class="project-screen" src="{{ screenshot.2 }}" width="75" height="75"></a>
+  									</div>
+  									{% endfor %}
+  			
+  									
+  								</div>
+  							</div>
+  							{% endif %}
+							
 								<div class="project-meta-heading">DATE</div>
 								<div class="project-meta-description project-exdate">{{ projectDates }}</div>
 								<div class="small-clear">
 								<div class="project-meta-heading">ORGANIZATION 
 								  <span class="project-comp">{{ projectCompany }}</span>
 								</div>
-								<div class="project-meta-description project-exclient"></div>
-								</div>
-							</div>
-						</div>
-						
-				    <div class="project-meta-heading p-artifact p-summary">PROJECT SUMMARY</div>
-					<div class="project-description no-picture">{{ projectSummary|safe }}</div>
-					
-					<!-- <div class="project-meta-heading p-artifact p-summary">DESIGN PROCESS FOLLOWED</div>
-					<div class="project-description no-picture">
-						{% if projectDesignProcess %}
-  							{{ projectDesignProcess|safe }}
-						{% else %}
-  							<span>I'm still typing up the design process that was used for this particular project.</span>			
-						{% endif %}					
-					</div> !-->
-					
-					<div class="project-meta-heading p-artifact p-summary">SCREENSHOTS</div>
-					<div class="project-description no-picture">
-						<div class="popup-gallery">			      
-							{% if finalScreenShotList %}
-  								{% for screenshot in finalScreenShotList %}
-  									<a href="{{ screenshot.1 }}" title="{{ screenshot.0 }}">
-  									<img class="project-screen" src="{{ screenshot.2 }}" width="75" height="75"></a>
-  								{% endfor %}
-							{% else %}
-  								<span>Screenshots are unavailable for this project.</span>
-							{% endif %}
-					      </div>
-      				</div>
-      				
-      				<div class="project-meta-heading p-artifact">ARTIFACTS & DELIVERABLES</div>
-					<div class="project-description no-picture artifact-footer">
+								<div class="project-meta-heading p-summary">PROJECT SUMMARY</div>
+								<div class="project-description no-picture">{{ projectSummary|safe }}</div>
+								
+								<div class="project-meta-heading p-artifact">ARTIFACTS & DELIVERABLES</div>
+					<div class="project-description no-picture artifact-bottom">
 					{% if artifactList %}
   						{% for artifact in artifactList %}
 						  <a href="{{ artifact.2 }}">{{ artifact.1 }}</a></span><br>
@@ -56,6 +46,17 @@
 					{% endif %}	
 									
 				</div>
+								
+							</div>
+						</div>
+						
+						
+						
+					</div>
+					
+
+      				
+      				
 			</div>	
 		</div>
 	</header>	
