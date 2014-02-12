@@ -9,54 +9,65 @@
 						<div class="project-meta">
 							<div class="project-meta-data project-date clearfix">
 							
-							{% if finalScreenShotList %}
-							<div class="project-v2-screenshots">
+								<div class="project-meta-heading">DATE</div>
+								<div class="project-meta-description project-exdate">{{ projectDates }}</div>
+								<div class="small-clear">
+								<div class="project-meta-heading">ORGANIZATION 
+								 	<span class="project-comp">{{ projectCompany }}</span>
+								</div>
+								<div class="project-meta-heading p-summary">PROJECT SUMMARY</div>
+								<div class="project-description no-picture artifact-bottom">
+								
+								{% if finalScreenShotList %}
+								<div class="project-v2-screenshots">
+								
+								<!-- start screenshots !-->
 								<div class="project-sub-head screenshot-mod">Screenshots</div>
 									<div class="popup-gallery">			      
-									
 									{% for screenshot in finalScreenShotList %}
   									<div class="screenshot-box">
   									<a href="{{ screenshot.1 }}" title="{{ screenshot.0 }}">
   									<img class="project-screen" src="{{ screenshot.2 }}" width="75" height="75"></a>
   									</div>
   									{% endfor %}
-  			
-  									
   								</div>
-  							</div>
-  							{% endif %}
+  								<!-- end screenshots!-->
+  								
+  								<!-- start artifact list !-->
+  								{% if artifactList %}
+  								<div class="project-sub-head screenshot-mod sidebar-clear">Artifacts</div>
+  								<div class="project-description no-picture artifact-bottom">
+	  								{% for artifact in artifactList %}
+	  									<span class="external-link-icon">&#xf08e;</span>
+	  									<span class="artifact-special">
+	  										<a href="{{ artifact.2 }}">{{ artifact.1 }}</a>
+	  									</span><br>
+	  								{% endfor %}
+	  							</div>
+	  							{% endif %}
+	  							</div>
+	  							<!-- end artifact list !-->
+	  							{% endif %}
 							
-								<div class="project-meta-heading">DATE</div>
-								<div class="project-meta-description project-exdate">{{ projectDates }}</div>
-								<div class="small-clear">
-								<div class="project-meta-heading">ORGANIZATION 
-								  <span class="project-comp">{{ projectCompany }}</span>
-								</div>
-								<div class="project-meta-heading p-summary">PROJECT SUMMARY</div>
-								<div class="project-description no-picture">{{ projectSummary|safe }}</div>
-								
-								<div class="project-meta-heading p-artifact">ARTIFACTS & DELIVERABLES</div>
-					<div class="project-description no-picture artifact-bottom">
-					{% if artifactList %}
-  						{% for artifact in artifactList %}
-						  <a href="{{ artifact.2 }}">{{ artifact.1 }}</a></span><br>
-  						{% endfor %}
-					{% else %}
-  						<span>Deliverables and artifacts unavailable for this project.</span>
-					{% endif %}	
-									
-				</div>
-								
+	  							{{ projectSummary|safe }}
+	  							</div>
+							
+							<!--
+							<div class="project-meta-heading p-artifact">ARTIFACTS & DELIVERABLES</div>
+							<div class="project-description no-picture artifact-bottom">
+								{% if artifactList %}
+									{% for artifact in artifactList %}
+										<a href="{{ artifact.2 }}">{{ artifact.1 }}</a></span><br>
+									{% endfor %}
+								{% else %}
+									<span>Deliverables and artifacts unavailable for this project.</span>
+								{% endif %}		
 							</div>
+							-->
+						
 						</div>
-						
-						
-						
 					</div>
-					
-
-      				
-      				
+				</div>
 			</div>	
 		</div>
 	</header>	
@@ -87,13 +98,13 @@
 		  <a href="/project?projectName=transparency-report"><span id="transparency-report">Google Transparency Report</span></a>
 		</li>
 		<li class="footer-nav-project">
-		  <a href="/project?projectName=mhiguera"><span id="mhiguera">Marie Higuera Law Offices</span></a>
+		  <a href="/project?projectName=event-connect"><span id="event-connect">Google Event Connect</span></a>
+		</li>
+		<li class="footer-nav-project">
+		  <a href="/project?projectName=mhiguera"><span id="mhiguera">Marie Higuera Law</span></a>
 		</li>
 		<li class="footer-nav-project">
 		  <a href="/project?projectName=buffalo-green-art"><span id="buffalo-green-art">Buffalo Green Art</span></a>
-		</li>
-		<li class="footer-nav-project">
-		  <a href="/project?projectName=event-connect"><span id="event-connect">Event Connect</span></a>
 		</li>
 		<li class="footer-nav-project">
 		  <a href="/project?projectName=google-wallet"><span id="google-wallet">Google Wallet</span></a>
