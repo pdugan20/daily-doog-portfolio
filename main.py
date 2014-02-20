@@ -33,8 +33,8 @@ class ProjectEntry(db.Model):
   projectDates = db.StringProperty()
   projectCompany = db.StringProperty()
   projectDesignProcess = db.TextProperty()
-  screenShotList = db.StringProperty()
-  artifactList = db.StringProperty()
+  screenShotList = db.TextProperty()
+  artifactList = db.TextProperty()
                     
 class MainPage(webapp2.RequestHandler):
   def get(self):
