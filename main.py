@@ -373,6 +373,15 @@ class BooksPage(webapp2.RequestHandler):
 
     path = jinja_environment.get_template('books_ext.html')
     self.response.out.write(path.render(template_values))
+    
+class NextdoorPrototype(webapp2.RequestHandler):
+  def get(self):
+    # place-holder for nextdoor digest email prototype
+    template_values = {
+      'emptyList': emptyList,
+    }
+    path = jinja_environment.get_template('/nextdoor/nextdoor-index.html')
+    self.response.out.write(path.render(template_values))
 
 application = webapp2.WSGIApplication([
   ('/project', ProjectPage),
@@ -380,6 +389,7 @@ application = webapp2.WSGIApplication([
   ('/books', BooksPage),
   ('/blog', BlogRedirect),
   ('/portfolio', PortfolioRedirect),
+  ('/nextdoor', NextdoorPrototype),
   ('/', MainPage)
 ], debug=True)
 

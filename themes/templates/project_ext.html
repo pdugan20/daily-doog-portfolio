@@ -46,7 +46,24 @@
 	  							</div>
 	  							{% endif %}
 	  							</div>
-	  							<!-- end artifact list !-->
+	  							
+	  							<!-- if only artifacts, no screenshots !-->
+	  							{% else %}
+	  							{% if artifactList %}
+	  							<div class="project-v2-screenshots">
+	  							<div class="project-sub-head screenshot-mod">Artifacts</div>
+  								<div class="project-description no-picture artifact-bottom">
+	  								{% for artifact in artifactList %}
+	  									<span class="external-link-icon">&#xf08e;</span>
+	  									<span class="artifact-special">
+	  										<a href="{{ artifact.2 }}">{{ artifact.1 }}</a>
+	  									</span><br>
+	  								{% endfor %}
+	  							</div>
+	  							</div>
+	  							{% endif %}
+	  							<!-- end only artifacts, no screenshots !-->
+
 	  							{% endif %}
 							
 	  							{{ projectSummary|safe }}
