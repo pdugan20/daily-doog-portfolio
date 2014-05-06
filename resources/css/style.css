@@ -815,7 +815,7 @@ body.doog-classic-has-welcome-text:not(.doog-classic-has-slideshow) .welcome-tex
 		@media (max-width: 850px){ .project-title { font-size: 500%; } }
 		
 		/* Project Description */
-		.project-description { font-family: "Open Sans", Arial, sans-serif; font-weight: 300; font-size: 92%; color: #333; width: 100%; clear: left; line-height: 145%; margin-bottom:40px;text-transform: none;}
+		.project-description { font-family: "Open Sans", Arial, sans-serif; font-weight: 300; font-size: 90%; color: #333; width: 100%; clear: left; line-height: 145%; margin-bottom:40px;text-transform: none;}
 		
 		.no-picture { margin-bottom: 25px;}
 		
