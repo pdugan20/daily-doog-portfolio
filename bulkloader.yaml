@@ -62,8 +62,10 @@ transformers:
       
     - property: screenShotList
       external_name: screenShotList
+      import_transform: db.Text
       # Type: String Stats: 1 properties of this type in this kind.
       
     - property: artifactList
       external_name: artifactList
+      import_transform: db.Text
       # Type: String Stats: 1 properties of this type in this kind.

@@ -748,13 +748,13 @@ body.doog-classic-has-welcome-text:not(.doog-classic-has-slideshow) .welcome-tex
 	}
 	
 		/* Project Meta */
-		.project-meta { text-transform: uppercase; color: #202020; float: left; position: relative; width: 100%; max-width: 800px; margin-bottom:20px; font-size: 90%;}
+		.project-meta { text-transform: uppercase; color: #202020; float: left; position: relative; width: 100%; /* max-width: 800px; */ font-size: 90%;}
 			.project-meta-col-1 { float: left; width: 310px; max-width: 310px; min-width: 310px; margin-right: 40px; }
 			.project-meta-col-2 { float: left; max-width: 310px; }
 				.project-meta-data { margin-bottom: 5px; font-size: 75%; }
 					.project-meta-heading { float: left; line-height: 100%; word-wrap: break-word; padding-right: 10px; font-family: "Open Sans", Arial, sans-serif; font-weight: 600; }
 					
-					.p-artifact { color: #202020; font-size: 70%; margin-bottom: 6px;}
+					.p-artifact { color: #202020; margin-bottom: 6px;}
 					.p-summary { float:left; clear:left; margin-top:4px; margin-bottom:5px;}
 					
 					.artifact-icon { /* font-family: ModernPictogramsNormal */ font-family:FontAwesome; font-size:23px; float:left; min-width:26px; text-align:center; margin-right:4px; }
@@ -815,7 +815,7 @@ body.doog-classic-has-welcome-text:not(.doog-classic-has-slideshow) .welcome-tex
 		@media (max-width: 850px){ .project-title { font-size: 500%; } }
 		
 		/* Project Description */
-		.project-description { font-family: "Open Sans", Arial, sans-serif; font-weight: 300; font-size: 60%; color: #333; width: 100%; clear: both; line-height: 145%; margin-bottom:40px;}
+		.project-description { font-family: "Open Sans", Arial, sans-serif; font-weight: 300; font-size: 90%; color: #333; width: 100%; clear: left; line-height: 145%; margin-bottom:40px;text-transform: none;}
 		
 		.no-picture { margin-bottom: 25px;}
 		
@@ -830,6 +830,8 @@ body.doog-classic-has-welcome-text:not(.doog-classic-has-slideshow) .welcome-tex
 			.temp-holder { margin-top: -25px;}
 			.project-description.about-me { margin-top:2px; }
 		}
+		
+		.my-pic-fix { margin-top:6px; width:99%; }
 		
 		@media (max-width: 580px){ 
 			.my-pic-fix { float:left; width:580px; margin-bottom:20px; }
@@ -1125,7 +1127,9 @@ hr { background-color: #DDDDDD; border: 0 none; clear: both; color: #EEEEEE; hei
 
 .page-template-wrapper hr { margin: 0 auto 55px auto; padding-top: 30px; margin: 0 auto 3em auto; padding-top: 0px; height: 3px; }	
 .page-template-wrapper object, .page-template-wrapper embed { max-width: 100%; }
-.page-template-wrapper img { max-width: 100%; height: auto; }
+.page-template-wrapper img { max-width: 100%; height: auto;}
+
+.blog-post-article img { margin-top:6px; margin-left:25px;}
 	
 small { font-size: smaller; }
 sub { font-size: smaller; line-height: normal; vertical-align: sub; }
@@ -2012,4 +2016,76 @@ input#search-input:focus {
 }
 .comment-link > a:hover {
   color:#6e5baa;	
+}
+
+/* screenshot stuff */
+.project-v2-inline {float:left;}
+.project-v2-screenshots {
+	float:right;
+	/* background:#F3F6F6; */
+	padding: 0px 0px 10px 15px;
+	margin-left:25px;
+	margin-bottom:20px;
+	max-width:324px;
+	/* margin-top:-2px; */
+	margin-top:3px;
+}
+.screenshot-box {
+	float:left;
+	margin-left:5px;
+	margin-bottom:-2px;
+}
+.screenshot-box:nth-child(0n+5) {
+	margin-left:0px;
+}
+.screenshot-box:nth-child(0n+9) {
+	margin-left:0px;
+}
+.screenshot-box:first-child {
+	margin-left:0px;
+}
+.screenshot-mod {
+	margin-top:0px;
+	margin-bottom:0px;
+	/* margin-top:-25px; */
+	/* font-size:95%; */
+	font-size: 110%;
+	margin-top:-3px;
+	font-style:	italic;
+	font-weight: 400;
+	text-transform: none;
+}
+.p-summary {
+	margin-top:30px;
+}
+.artifact-bottom {
+	margin-bottom: 5px;
+}
+.popup-gallery {
+	/* border-top: 3px solid #d9dcdd; */
+	padding-top:5px;
+}
+@media (max-width: 950px) {
+	.project-v2-screenshots {
+		display:none;
+	}
+}
+.sidebar-clear {
+	float:left;
+	clear:left;
+	margin-top:20px;
+}
+.external-link-icon {
+	font-family:FontAwesome; 
+	font-size:14px; 
+	color:#333;
+	line-height: 100%;
+}
+.artifact-special a:link {
+	text-decoration: none;
+	font-size:16px;
+	line-height: 100%;
+}
+.artifact-special a:hover {
+	text-decoration: underline;
 }
