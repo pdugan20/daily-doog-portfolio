@@ -730,7 +730,7 @@ body.doog-classic-has-welcome-text:not(.doog-classic-has-slideshow) .welcome-tex
 /* Project Box */
 .portfolio_box { position: absolute; top: 0; left: 0; right: 0; width: 92%; max-width: 1120px; z-index: 210; opacity: 0; visibility: hidden; margin: 0 auto; }
 	.admin-bar .portfolio_box { top: 28px; }
-	.content-projectc { padding-bottom: 30px; margin: 0 auto; position: relative; width: 100%; margin-top: 30px; }
+	.content-projectc { padding-bottom: 30px; margin: 0 auto; position: relative; width: 100%; margin-top: 35px; }
 	.portfolio_box-visible { opacity: 1; visibility: visible; }
 	.portfolio_box {
 		-webkit-transition: visibility 0s linear 0.2s, opacity 0.2s linear;
@@ -2028,7 +2028,7 @@ input#search-input:focus {
 	margin-bottom:20px;
 	max-width:324px;
 	/* margin-top:-2px; */
-	margin-top:3px;
+	margin-top:-118px;
 }
 .screenshot-box {
 	float:left;
@@ -2056,7 +2056,15 @@ input#search-input:focus {
 	text-transform: none;
 }
 .p-summary {
-	margin-top:30px;
+	margin-top:35px;
+}
+.header-clear {
+	display: block;
+	width: 100%;
+	font-size: 22px;
+	float: none;
+}
+.bullet-margin-fix {
 }
 .artifact-bottom {
 	margin-bottom: 5px;
@@ -2064,6 +2072,7 @@ input#search-input:focus {
 .popup-gallery {
 	/* border-top: 3px solid #d9dcdd; */
 	padding-top:5px;
+	clear: left;
 }
 @media (max-width: 950px) {
 	.project-v2-screenshots {

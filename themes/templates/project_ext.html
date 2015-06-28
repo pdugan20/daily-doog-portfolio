@@ -22,7 +22,7 @@
 								<div class="project-v2-screenshots">
 								
 								<!-- start screenshots !-->
-								<div class="project-sub-head screenshot-mod">Screenshots</div>
+								<div class="project-meta-heading p-summary header-clear">IMAGES</div>
 									<div class="popup-gallery">			      
 									{% for screenshot in finalScreenShotList %}
   									<div class="screenshot-box">
@@ -35,7 +35,7 @@
   								
   								<!-- start artifact list !-->
   								{% if artifactList %}
-  								<div class="project-sub-head screenshot-mod sidebar-clear">Artifacts</div>
+  								<div class="project-meta-heading p-summary">ARTIFACTS</div>
   								<div class="project-description no-picture artifact-bottom">
 	  								{% for artifact in artifactList %}
 	  									<span class="external-link-icon">&#xf08e;</span>
@@ -51,7 +51,7 @@
 	  							{% else %}
 	  							{% if artifactList %}
 	  							<div class="project-v2-screenshots">
-	  							<div class="project-sub-head screenshot-mod">Artifacts</div>
+	  							<div class="project-meta-heading p-summary">ARTIFACTS</div>
   								<div class="project-description no-picture artifact-bottom">
 	  								{% for artifact in artifactList %}
 	  									<span class="external-link-icon">&#xf08e;</span>
