@@ -2,7 +2,7 @@ Patrick Dugan Portfolio:
 http://www.dailydoog.com/portfolio
 
 local:
-appcfg.py upload_data --config_file=GitHub/doogport/bulkloader.yaml --filename=GitHub/doogport/resources/loader/projects.csv --kind=ProjectEntry --url=http://localhost:8080/_ah/remote_api --email=dugan.pat@gmail.com
+appcfg.py upload_data --config_file=GitHub/daily-doog-portfolio/bulkloader.yaml --filename=GitHub/daily-doog-portfolio/resources/loader/projects.csv --kind=ProjectEntry --url=http://localhost:8080/_ah/remote_api --email=dugan.pat@gmail.com
 
 production:
-appcfg.py upload_data --config_file=GitHub/doogport/bulkloader.yaml --filename=GitHub/doogport/resources/loader/projects.csv --kind=ProjectEntry --url=http://dailydoog.appspot.com/_ah/remote_api --email=dugan.pat@gmail.com
+appcfg.py upload_data --config_file=GitHub/daily-doog-portfolio/bulkloader.yaml --filename=GitHub/daily-doog-portfolio/resources/loader/projects.csv --kind=ProjectEntry --url=http://dailydoog.appspot.com/_ah/remote_api --email=dugan.pat@gmail.com
