@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="tn-grid-container clearfix">
+  <section class="tn-grid-container-inner clearfix">
+    <section id="options" class="clearfix">
+	  <ul id="filters" class="option-set clearfix" data-option-key="filter">
+	    <li><a href="#filter" data-option-value="*" class="selected">Entire Collection</a></li>
+		<li><a href="#filter" data-option-value=".1960">1960s</a></li>
+		<li><a href="#filter" data-option-value=".1970">1970s</a></li>
+		<li><a href="#filter" data-option-value=".1980">1980s</a></li>
+		<li><a href="#filter"  data-option-value=".1990">1990s</a></li>
+		<li><a href="#filter"  data-option-value=".2000">2000s</a></li>
+		<li><a href="#filter"  data-option-value=".2010">2010s</a></li>
+	  </ul>
+				
+	  <ul id="etc" class="clearfix">
+	    <li id="toggle-sizes" class="underline-removed">
+		<!-- where navigation should go !-->
+	    </li>
+	  </ul>
+	</section>
+			
+	<div id="container" class="clickable clearfix isotope" style="position: relative; overflow: hidden; height: 775px;">
+				
+	{% for record in recordCollection %}
+    <div class="element element-small record-box {{ record.6 }}">
+	    <a class="thumbnail-link" href="{{ record.4 }}"></a>	
+		<p class="number">7</p>
+		<div class="thumbnail-meta-data-wrapper">
+		  <div class="symbol record-symbol">
+		    <a class="thumbnail-project-link bookshelf-link">{{ record.1 }}</a>
+		  </div>
+		</div>
+		<div class="name">{{ record.2 }}</div>
+		<div class="categories">{{ record.3 }}</div>
+		<p class="id" style="display:none;">0</p>
+		<div style="background-color: #6e5baa; width: 100%; height: 100%;" class="thumbnail-hover"></div>
+		<img class="project-img project-img-visible album-art-img" src="{{ record.5 }}" alt="{{ record.1 }}">
+		<div style="background-color: #6e5baa"></div>
+	  </div>
+  {% endfor %}
+    
+    </div>
+  </section>
+  
+</div>
+<div class="vinyl-footer">
+    Powered by the <a href="https://www.discogs.com/developers/"><img class="discogs-logo" src="./resources/images/misc/discogs-logo.png" alt="Discogs logo"></a> api. Source code <a href="#">available on Github</a>.
+  </div>
+{% endblock %}

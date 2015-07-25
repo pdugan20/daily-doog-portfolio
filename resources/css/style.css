@@ -1868,6 +1868,7 @@ margin-right: auto; width: 122px; } }
 .project-img-visible { opacity: 1; transition: opacity 0.5s; -moz-transition: opacity 0.5s; -webkit-transition: opacity 0.5s; } -moz-transition: opacity 0.5s; -webkit-transition: opacity 0.5s; }
 
 image.project-img.project-img-visible.bookshelf-img { height:180px; }
+
 .artifact-space-bottom { float:left; margin-bottom: 0px; }
 .project-screen { border-style:solid; border-width:1px; border-color:#202020;}
 
@@ -1875,6 +1876,21 @@ image.project-img.project-img-visible.bookshelf-img { height:180px; }
 @media (max-width: 950px){
 		.artifact-space-bottom {}
 	}
+	
+.discogs-logo {
+  height: 19px;
+  width: 52px;
+  vertical-align: middle;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+.vinyl-footer {
+  margin-left: 80px;
+  margin-top: 4px;
+}
+.vinyl-adjust {
+  margin-left: -5px;
+}
 	
 /* footer nav specific */
 .footer-nav-title {

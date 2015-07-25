@@ -365,13 +365,94 @@ class BooksPage(webapp2.RequestHandler):
       'bookShelfAvgPubYear': bookShelfAvgPubYear,
       'bookShelfNavLinks': bookShelfNavLinks,
       'currentViewList': currentViewList,
-      'bookShelfJsonObject': bookShelfJsonObject,
       'navDict': navDict,
       'bodyClass': bodyClass,
       'interactionType': interactionType
     }
 
     path = jinja_environment.get_template('books_ext.html')
+    self.response.out.write(path.render(template_values))
+    
+class VinylPage(webapp2.RequestHandler):
+  def get(self):
+      
+    navDict = {
+      'aboutMe': '',
+      'blog': '',
+      'portfolio': '',
+      'readingList': 'current_page_item current-menu-item'
+    };
+    
+    bodyClass = 'home blog responsive flow-skin-0 doog-portfolio body-visible'
+    interactionType = 'vinyl'
+    
+    discogsUrl = 'https://api.discogs.com/users/patdugan/collection/folders/0/releases'
+    
+    paginationBase = '100'  
+    consumerKey = 'qzhFhUTUMydigBFJCdGU'
+    consumerSecret = 'jVlHbmkHintWgTXXEIuENaNLwzoYoJwE'
+    
+    discogsUrl += '?per_page=' + paginationBase
+    discogsUrl += '&key=' + consumerKey
+    discogsUrl += '&secret=' + consumerSecret
+    
+    vinylJsonRaw = urlfetch.fetch(discogsUrl)
+    vinylJsonObject = json.loads(vinylJsonRaw.content)
+    vinylCollection = vinylJsonObject['releases']
+    
+    recordCollection = []
+    
+    for lp in vinylCollection:
+      recordId = lp['id']
+      recordName = lp['basic_information']['title']
+      artistName = lp['basic_information']['artists'][0]['name']
+      recordReleaseYear = lp['basic_information']['year'],
+      albumArt = lp['basic_information']['thumb'],
+      
+      artistName = artistName.replace(', The', '')
+      discogsUrl = 'http://www.discogs.com/release' + str(recordId)
+      recordReleaseYear = int(recordReleaseYear[0])
+      
+      if (recordReleaseYear >= 1960) and (recordReleaseYear <= 1969):
+        recordCat = 1960
+      elif (recordReleaseYear >= 1970) and (recordReleaseYear <= 1979):
+        recordCat = 1970
+      elif (recordReleaseYear >= 1980) and (recordReleaseYear <= 1989):
+        recordCat = 1980
+      elif (recordReleaseYear >= 1990) and (recordReleaseYear <= 1999):
+        recordCat = 1990
+      elif (recordReleaseYear >= 2000) and (recordReleaseYear <= 2009):
+        recordCat = 2000
+      elif (recordReleaseYear >= 2010):
+        recordCat = 2010
+      else:
+        recordCat = 0
+    
+      currentRecord = [
+        recordId,
+        recordName,
+        artistName,
+        recordReleaseYear,
+        discogsUrl,
+        albumArt[0],
+        recordCat
+      ]
+      
+      if (recordName == 'The Beatles') or (recordName == 'Boys & Girls'):
+        pass
+      else:          
+        recordCollection.append(currentRecord)
+    
+    logging.info(recordCollection)
+    
+    template_values = {
+      'recordCollection': recordCollection,
+      'navDict': navDict,
+      'bodyClass': bodyClass,
+      'interactionType': interactionType
+    }
+
+    path = jinja_environment.get_template('vinyl_ext.html')
     self.response.out.write(path.render(template_values))
     
 class NextdoorPrototype(webapp2.RequestHandler):
@@ -387,6 +468,7 @@ application = webapp2.WSGIApplication([
   ('/project', ProjectPage),
   ('/about', AboutPage),
   ('/books', BooksPage),
+  ('/vinyl', VinylPage),
   ('/blog', BlogRedirect),
   ('/portfolio', PortfolioRedirect),
   ('/nextdoor', NextdoorPrototype),

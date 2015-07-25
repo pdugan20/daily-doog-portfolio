@@ -894,6 +894,10 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
 	height: 320px;
 }
 
+.record-box {
+  height: 220px;
+}
+
 .variable-sizes .element.width2 { width: 445px; }
 .variable-sizes .element.height2 { height: 305px; }
 .variable-sizes .element.width3 { width: 670px; }
@@ -991,6 +995,8 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
 .grid_hidden { opacity: 0!important; }
 
 .element-small .symbol { font-weight: 700!important; font-size: 28px!important; z-index: 2; }
+
+.element-small .record-symbol { font-weight: 700!important; font-size: 22px!important; z-index: 2; }
 
 div.symbol.bookshelf-symbol { height: 200px; }
 
