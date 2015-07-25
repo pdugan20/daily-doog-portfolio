@@ -156,25 +156,13 @@ class AboutPage(webapp2.RequestHandler):
     
 class BooksPage(webapp2.RequestHandler):
   def get(self):
-    if self.request.get('bookShelfId'):
-      bookShelfId = self.request.get('bookShelfId')
-    else:
-      bookShelfId = '115429583296661000087' 
-    if self.request.get('startIndex'):
-      startIndex = self.request.get('startIndex')
-    else:
-      startIndex = 0    
-    if self.request.get('maxResults'):
-      maxResults = self.request.get('maxResults')
-    else:
-      maxResults = 15
-      
     navDict = {
       'aboutMe': '',
       'blog': '',
       'portfolio': '',
       'readingList': 'current_page_item current-menu-item'
     };
+    
     bodyClass = 'home blog responsive flow-skin-0 doog-portfolio body-visible'
     interactionType = 'bookshelf'
       
@@ -192,6 +180,10 @@ class BooksPage(webapp2.RequestHandler):
       'Yz8Fnw0PlEQC': 'fiction',
       'WrL9de30FDMC': 'fiction'
     };
+    
+    bookShelfId = '115429583296661000087' 
+    startIndex = 0    
+    maxResults = 15
       
     booksApiKey = 'AIzaSyA8cv2udFuAiC6sK_GBi0dZcBYQM5daSYg'
     bookShelfUrl = 'https://www.googleapis.com/books/v1/users/' + \
@@ -202,50 +194,13 @@ class BooksPage(webapp2.RequestHandler):
     '&country=US' + \
     '&key=' + booksApiKey
     
-    # actual url
-    # https://www.googleapis.com/books/v1/users/115429583296661000087/bookshelves/1001/volumes?maxResults=18&startIndex=0&country=US&key=AIzaSyA8cv2udFuAiC6sK_GBi0dZcBYQM5daSYg
-    
+
     bookProfileUrl = 'http://books.google.com/books?uid=' + bookShelfId 
-    
-    # userAgent = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
-    # headers = {'User-Agent':userAgent,}
-    # request = urllib2.Request(bookShelfUrl, None, headers)
-    # bookShelfJsonRaw = urllib2.urlopen(request)    
-    
-    # bookShelfJsonRaw = urllib.urlopen(bookShelfUrl)
-    # bookShelfJsonObject = json.load(bookShelfJsonRaw) 
-    # logging.info(bookShelfJsonRaw)  
-    
-    # enable for testing on localserver
-    # bookShelfUrl = 'http://localhost:8080/resources/testing/bookshelf.json'
-    
-    # alternative to urllib
     bookShelfJsonRaw = urlfetch.fetch(bookShelfUrl)
-    # logging.info(bookShelfJsonRaw.content)
-    
     bookShelfJsonObject = json.loads(bookShelfJsonRaw.content)
-    # logging.info(bookShelfJsonObject)
-    
-    totalBooksInLibrary = int(bookShelfJsonObject['totalItems'])
-    totalBooksInLibrary = 0
       
     parsedBookShelf = bookShelfJsonObject['items']
-    bookShelfPageCount = 0
-    bookShelfCombinedRatings = 0.0
-    bookShelfAvgPubYear = 0
-    booksPerQuery = 12
     booksOnShelfList = []
-    
-    navLinkStart = 0
-    navLinkCount = 0
-    bookShelfNavLinks = [[navLinkCount, navLinkStart]]
-    
-    while navLinkStart <= totalBooksInLibrary:
-      navLinkStart += booksPerQuery
-      navLinkCount += 1
-      linkList = [navLinkCount, navLinkStart]
-      bookShelfNavLinks.append(linkList)
-      
     currentViewList = [startIndex, (int(startIndex) + 12)]
     
     for bookDescriptionDict in parsedBookShelf:
@@ -254,8 +209,6 @@ class BooksPage(webapp2.RequestHandler):
           bookTitle = bookDescriptionDict[
           'volumeInfo']['title'
           ]
-          # if len(str(bookTitle)) > 30:
-          #   bookTitle = (bookTitle[:28] + '...')
         except KeyError:
           bookTitle = 'No title info.'
         try:
@@ -326,7 +279,6 @@ class BooksPage(webapp2.RequestHandler):
         
         try:  
           bookPublishDate = datetime.strptime(bookPublishDate, '%Y-%m-%d').date()
-          # logging.info(bookPublishDate.year)
           bookPublishDate = str(bookPublishDate.year)
         except ValueError:
           pass
@@ -350,20 +302,9 @@ class BooksPage(webapp2.RequestHandler):
         ]
                   
         booksOnShelfList.append(currentBook)
-        bookShelfPageCount += bookPageCount
-        bookShelfCombinedRatings += bookRating
-        # bookShelfAvgPubYear += bookPublishDate
-    
-    bookShelfCombinedRatings = (bookShelfCombinedRatings/booksPerQuery)
-    bookShelfCombinedRatings = ("%.2f" % bookShelfCombinedRatings)
-    # bookShelfAvgPubYear = (bookShelfAvgPubYear/booksPerQuery)
     
     template_values = {
       'booksOnShelfList': booksOnShelfList,
-      'bookShelfPageCount': bookShelfPageCount,
-      'bookShelfCombinedRatings': bookShelfCombinedRatings,
-      'bookShelfAvgPubYear': bookShelfAvgPubYear,
-      'bookShelfNavLinks': bookShelfNavLinks,
       'currentViewList': currentViewList,
       'navDict': navDict,
       'bodyClass': bodyClass,
@@ -442,8 +383,6 @@ class VinylPage(webapp2.RequestHandler):
         pass
       else:          
         recordCollection.append(currentRecord)
-    
-    logging.info(recordCollection)
     
     template_values = {
       'recordCollection': recordCollection,
