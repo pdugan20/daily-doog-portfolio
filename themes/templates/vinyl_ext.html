@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="tn-grid-container clearfix">
-  <section class="tn-grid-container-inner clearfix">
+  <section class="tn-grid-container-inner clearfix vinyl-extra-padding">
     <section id="options" class="clearfix">
 	  <ul id="filters" class="option-set clearfix" data-option-key="filter">
 	    <li><a href="#filter" data-option-value="*" class="selected">Entire Collection</a></li>
@@ -43,9 +43,9 @@
     
     </div>
   </section>
-  
-</div>
 <div class="vinyl-footer">
     Powered by the <a href="https://www.discogs.com/developers/" target="_blank"><img class="discogs-logo" src="./resources/images/misc/discogs-logo.png" alt="Discogs logo"></a> api. Source code <a href="https://github.com/pdugan20/daily-doog-portfolio/blob/master/main.py#L317" target="_blank">available on Github</a>.
-  </div>
+  </div>  
+</div>
+
 {% endblock %}

@@ -1884,9 +1884,11 @@ image.project-img.project-img-visible.bookshelf-img { height:180px; }
   margin-left: 1px;
   margin-right: 1px;
 }
+.vinyl-extra-padding {
+  margin-bottom: 6px;
+}
 .vinyl-footer {
-  margin-left: 80px;
-  margin-top: 4px;
+  margin-left: 2px;
 }
 .vinyl-adjust {
   margin-left: -5px;
