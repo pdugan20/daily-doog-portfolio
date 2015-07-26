@@ -349,9 +349,10 @@ class VinylPage(webapp2.RequestHandler):
       artistName = lp['basic_information']['artists'][0]['name']
       recordReleaseYear = lp['basic_information']['year'],
       albumArt = lp['basic_information']['thumb'],
+      recordLabel = lp['basic_information']['labels'][0]['name'],
       
       artistName = artistName.replace(', The', '')
-      discogsUrl = 'http://www.discogs.com/release' + str(recordId)
+      discogsUrl = 'http://www.discogs.com/release/' + str(recordId)
       recordReleaseYear = int(recordReleaseYear[0])
       
       if (recordReleaseYear >= 1960) and (recordReleaseYear <= 1969):
@@ -376,7 +377,8 @@ class VinylPage(webapp2.RequestHandler):
         recordReleaseYear,
         discogsUrl,
         albumArt[0],
-        recordCat
+        recordCat,
+        recordLabel[0]
       ]
       
       if (recordName == 'The Beatles') or (recordName == 'Boys & Girls'):
