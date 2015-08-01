@@ -757,6 +757,16 @@ body.doog-classic-has-welcome-text:not(.doog-classic-has-slideshow) .welcome-tex
 					.p-artifact { color: #202020; margin-bottom: 6px;}
 					.p-summary { float:left; clear:left; margin-top:4px; margin-bottom:5px;}
 					
+					.video-container {
+  					width: 50%;
+  					margin: 0px auto;
+  					margin-top: 30px;
+					}
+					.video-caption {
+  				  font-style: italic;
+  				  text-align: center;
+  				}
+					
 					.artifact-icon { /* font-family: ModernPictogramsNormal */ font-family:FontAwesome; font-size:23px; float:left; min-width:26px; text-align:center; margin-right:4px; }
 					.deliverable-title { float:left; }
 					.deliverable-item {float:left; clear:left; margin-bottom:5px;}
