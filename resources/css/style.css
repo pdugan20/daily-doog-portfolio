@@ -759,9 +759,30 @@ body.doog-classic-has-welcome-text:not(.doog-classic-has-slideshow) .welcome-tex
 					
 					.video-container {
   					width: 50%;
-  					margin: 0px auto;
+  					margin: 0 auto;
   					margin-top: 30px;
 					}
+					
+					@media (max-width: 1279px) {
+					  .video-container {
+  					  display: none;
+					  }
+          }
+					
+					.video-container.phone-container {
+  					background-image: url("/resources/images/portfolio/flex-app/misc/flex-app.gif");
+  					background-position: 21px 84px;
+  					background-repeat: no-repeat;
+  					background-size: 87%;
+  					width: 25%;
+          }
+					
+					.phone-gif {
+  					display: block;
+  					margin: 0 auto;
+  					margin-bottom: 20px;
+					}
+					
 					.video-caption {
   				  font-style: italic;
   				  text-align: center;
