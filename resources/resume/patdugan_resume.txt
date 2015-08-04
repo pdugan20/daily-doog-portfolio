@@ -1,0 +1,111 @@
+Patrick Dugan
+www.dailydoog.com - dugan.pat@gmail.com - 716.481.5567
+
+Frontend & Markup:
+CSS, Jinja2, jQuery, HTML5
+
+Tools:
+Pixate, Sketch, Invision, Illustrator, Balsamiq, Fireworks, Photoshop
+
+Databases:
+mySQL
+
+Languages:
+Java, Swift, Python, Javascript
+
+IDEs:
+Coda, Xcode, Android Studio
+
+Design:
+Heuristic Evaluation, Cognitive Walkthrough, Low & Hi-Fi Prototyping
+
+Research:
+Card Sorting, Task Analysis, Contextual Inquiry, Think-Aloud Protocol
+
+Experience:
+Product Designer, Nextdoor Inc.
+June 2014 to Present :: San Francisco, CA
+I currently work at Nextdoor in the role of Product Designer. I joined Nextdoor in June of 2014
+as a member of the Designer Fund Bridge program. At Nextdoor I work primarily on our company’s Android and web applications in both a product design and front-end development capacity.
+
+Technical Strategist, Google Inc.
+March 2011 to August 2013 :: Mountain View, CA
+I worked as a member of the Google Wallet team in an internal development capacity.
+In this role I helped create models that proactively identified fraud occurring across Google’s payment platforms. I additionally worked as an interaction designer within Google Research and as a member of the Google Transparency Reporting team.
+
+Technical Development Program, Liberty Mutual Insurance Group
+May 2010 to March 2011 :: Boston, MA
+I participated in the Liberty Mutual Technical Development program and was a member of the company’s first mobile development team. In this role I helped design and build Liberty’s first Android, iOS, and mobile-web based applications. Additionally, I conducted user research across a number of Liberty’s consumer facing mobile and desktop based applications.
+
+Systems Analyst (Intern), Polaris Global Mobility Software
+March 2010 to May 2011 :: Bellevue, WA
+I tested and filed bugs against custom integrations of an expatriate employee payroll management solution. Additionally, I provided technical assistance and support for
+Fortune 500 clients that included Thomson Reuters, Johnson & Johnson, and Goldman Sachs. I also lead a project to develop an internal collaborative knowledge-sharing repository.
+
+Education:
+University of Washington
+2013 to 2014 :: Seattle, WA
+Research
+Master of Science; Human Computer Interaction (In progress); GPA: 3.89
+
+University of Washington
+2008 to 2010 :: Seattle, WA
+Bachelor of Arts; Information Systems; GPA: 3.54
+
+College of San Mateo
+2011 to 2013 :: San Mateo, CA
+Computer Science (Individual Study); GPA: 4.0
+
+San Francisco Academy of Art University
+2012 to 2013 :: San Francisco, CA
+Web Design & New Media (Individual Study); GPA: 3.8
+
+Selected Projects:
+Nextdoor Events
+October 2014 to March 2015 :: Nextdoor :: San Francisco, CA
+• Led design efforts on android and desktop + responsive web for new event creation and consumption user interfaces
+• Assisted web and android engineering teams in front-end implementation of design work
+• Helped define privacy model for the first publicly shareable user created content on any Nextdoor platform
+
+USMC Pro-Fitness Android Application
+February 2012 :: Freelance :: San Francisco, CA
+• Designed, developed, and published an android fitness tracking application
+• Drove 15,000+ unique application installs
+• Conducted usability studies with active duty Marines leading to implementation of actionable improvements
+
+Google Event Connect
+October 2012 to August 2013 :: Google, Mountain View, CA
+• Drafted and prototyped improved visual redesign for major components of an internal event planning application
+• Built functional HTML/CSS/Javascript prototypes for use by relevant stakeholder groups within Google Research
+• Consolidated information architecture while also improving event creation, discovery, and logistics management user-flows
+
+Additional Experience
+Codepath iOS (Swift) for Designers Bootcamp
+May 2015 to July 2015 :: Codepath :: San Francisco, CA
+
+Design Lab Mentor
+September 2014 to Present :: Trydesignlab.com :: San Francisco, CA
+
+Designer Fund Bridge Program
+May 2014 to Present :: Designer Fund :: San Francisco, CA
+
+University of Washington Human Computer Interaction Graduate Research Assistant
+June 2013 to June 2014 :: University of Washington :: Seattle, WA
+
+University of Washington Undergraduate Research Learning Community Mentor
+September 2013 to January 2014 :: University of Washington :: Seattle, WA
+
+University of Washington Information Systems Undergraduate Mentor
+September 2009 to June 2010 :: University of Washington :: Seattle, WA
+
+University of Washington Resident Adviser
+September 2009 to June 2010 :: University of Washington HFS :: Seattle, WA
+
+United States Marine Corps Officer Candidate
+June 2009 to September 2009 :: USMC Officer Candidate School :: Quantico, VA
+
+Buffalo Green Art Web Developer (Intern)
+May 2008 to September 2008 :: Buffalogreenart.com :: Buffalo, NY
+
+Boy Scouts of America; Eagle Scout
+March 2005 :: Boy Scouts of America :: Buffalo, NY
