@@ -8,7 +8,6 @@
 				<div class="content-projectc">
 						<div class="project-meta">
 							<div class="project-meta-data project-date clearfix">
-							
 								<div class="project-meta-heading">DATE</div>
 								<div class="project-meta-description project-exdate">{{ projectDates }}</div>
 								<div class="small-clear">
@@ -17,71 +16,51 @@
 								</div>
 								<div class="project-meta-heading p-summary">PROJECT SUMMARY</div>
 								<div class="project-description no-picture artifact-bottom">
-								
 								{% if finalScreenShotList %}
 								<div class="project-v2-screenshots">
-								
 								<!-- start screenshots !-->
 								<div class="project-meta-heading p-summary header-clear">IMAGES</div>
-									<div class="popup-gallery">			      
-									{% for screenshot in finalScreenShotList %}
-  									<div class="screenshot-box">
-  									<a href="{{ screenshot.1 }}" title="{{ screenshot.0 }}">
-  									<img class="project-screen" src="{{ screenshot.2 }}" width="75" height="75"></a>
-  									</div>
-  									{% endfor %}
-  								</div>
-  								<!-- end screenshots!-->
-  								
-  								<!-- start artifact list !-->
-  								{% if artifactList %}
-  								<div class="project-meta-heading p-summary">ARTIFACTS</div>
-  								<div class="project-description no-picture artifact-bottom">
-	  								{% for artifact in artifactList %}
-	  									<span class="external-link-icon">&#xf08e;</span>
-	  									<span class="artifact-special">
-	  										<a href="{{ artifact.2 }}" target="_blank">{{ artifact.1 }}</a>
-	  									</span><br>
-	  								{% endfor %}
-	  							</div>
-	  							{% endif %}
-	  							</div>
-	  							
-	  							<!-- if only artifacts, no screenshots !-->
-	  							{% else %}
-	  							{% if artifactList %}
-	  							<div class="project-v2-screenshots">
-	  							<div class="project-meta-heading p-summary">ARTIFACTS</div>
-  								<div class="project-description no-picture artifact-bottom">
-	  								{% for artifact in artifactList %}
-	  									<span class="external-link-icon">&#xf08e;</span>
-	  									<span class="artifact-special">
-	  										<a href="{{ artifact.2 }}" target="_blank">{{ artifact.1 }}</a>
-	  									</span><br>
-	  								{% endfor %}
-	  							</div>
-	  							</div>
-	  							{% endif %}
-	  							<!-- end only artifacts, no screenshots !-->
-
-	  							{% endif %}
-							
-	  							{{ projectSummary|safe }}
-	  							</div>
-							
-							<!--
-							<div class="project-meta-heading p-artifact">ARTIFACTS & DELIVERABLES</div>
-							<div class="project-description no-picture artifact-bottom">
-								{% if artifactList %}
-									{% for artifact in artifactList %}
-										<a href="{{ artifact.2 }}">{{ artifact.1 }}</a></span><br>
+								<div class="popup-gallery">			      
+								  {% for screenshot in finalScreenShotList %}
+									  <div class="screenshot-box">
+									    <a href="{{ screenshot.1 }}" title="{{ screenshot.0 }}">
+									    <img class="project-screen" src="{{ screenshot.2 }}" width="75" height="75"></a>
+									  </div>
 									{% endfor %}
-								{% else %}
-									<span>Deliverables and artifacts unavailable for this project.</span>
-								{% endif %}		
-							</div>
-							-->
-						
+								</div>
+								<!-- end screenshots!-->
+								<!-- start artifact list !-->
+								{% if artifactList %}
+								  <div class="project-meta-heading p-summary">ARTIFACTS</div>
+								  <div class="project-description no-picture artifact-bottom">
+  								  {% for artifact in artifactList %}
+  									  <span class="external-link-icon">&#xf08e;</span>
+  									  <span class="artifact-special">
+  										  <a href="{{ artifact.2 }}" target="_blank">{{ artifact.1 }}</a>
+  									  </span><br>
+  								  {% endfor %}
+  							  </div>
+  							{% endif %}
+  							</div>
+  							<!-- if only artifacts, no screenshots !-->
+  							{% else %}
+  							{% if artifactList %}
+  							  <div class="project-v2-screenshots">
+  							  <div class="project-meta-heading p-summary">ARTIFACTS</div>
+								  <div class="project-description no-picture artifact-bottom">
+  								  {% for artifact in artifactList %}
+  									  <span class="external-link-icon">&#xf08e;</span>
+  									  <span class="artifact-special">
+  										  <a href="{{ artifact.2 }}" target="_blank">{{ artifact.1 }}</a>
+  									  </span><br>
+  								  {% endfor %}
+  							  </div>
+  							</div>
+  							{% endif %}
+  							<!-- end only artifacts, no screenshots !-->
+  							{% endif %}
+  							{{ projectSummary|safe }}
+	  			    </div>
 						</div>
 					</div>
 				</div>
@@ -106,7 +85,6 @@
 {% block footerNav %}
 <div class="container_12 project-nav-footer">
   <div class="grid_12 grid_not_responsive footer-nav-div">
-    
     <!-- start col 1 !-->
     <div class="footer-nav-col">
       <span class="footer-nav-title">Desktop</span>
@@ -129,8 +107,7 @@
       </ul>
     </div>
     <!-- end col 1 !-->
-    
-    <!-- start col 3 !-->
+    <!-- start col 2 !-->
     <div class="footer-nav-col">
       <span class="footer-nav-title">Mobile</span>
       <ul class="footer-nav-list">
@@ -148,9 +125,8 @@
 		</li>
       </ul>
     </div>
-    <!-- end col 3 !-->
-    
-        <!-- start col 2 !-->
+    <!-- end col 2 !-->
+    <!-- start col 3 !-->
     <div class="footer-nav-col">
       <span class="footer-nav-title">Interaction</span>
       <ul class="footer-nav-list">
@@ -165,8 +141,7 @@
 		</li>
       </ul>
     </div>
-    <!-- end col 2 !-->
-    
+    <!-- end col 3 !-->
     <!-- start col 4 !-->
     <div class="footer-nav-col">
       <span class="footer-nav-title">Research</span>
@@ -183,7 +158,6 @@
       </ul>
     </div>
     <!-- end col 4 !-->
-    
     <!-- start col 5 !-->
     <div class="footer-nav-col footer-col-last">
       <span class="footer-nav-title">Sketching</span>
@@ -194,7 +168,6 @@
       </ul>
     </div>
     <!-- end col 5 !-->
-  
   </div>
   <div class="grid_12">
     <ul class="footer-widget-container">
