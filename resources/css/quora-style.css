@@ -1,0 +1,21 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	color: #1e1c1c;
+}
+
+div.main-wrapper {
+	max-width:500px;
+	margin: 25px auto;
+}
+
+img.cowabunga {
+	width: 500px;
+}
+
+div.turtles {
+	text-align: center;
+	font-size: 18px;
+	margin-top: 4px;
+}

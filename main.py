@@ -245,6 +245,15 @@ class NextdoorPrototype(webapp2.RequestHandler):
     path = jinja_environment.get_template('/nextdoor/nextdoor-index.html')
     self.response.out.write(path.render(template_values))
 
+class QuoraLanding(webapp2.RequestHandler):
+  def get(self):
+    # place-holder for quora landing page
+    template_values = {
+      'emptyList': emptyList,
+    }
+    path = jinja_environment.get_template('/quora/quora-landing.html')
+    self.response.out.write(path.render(template_values))
+
 application = webapp2.WSGIApplication([
   ('/project', ProjectPage),
   ('/about', AboutPage),
@@ -252,6 +261,7 @@ application = webapp2.WSGIApplication([
   ('/blog', BlogRedirect),
   ('/portfolio', PortfolioRedirect),
   ('/nextdoor', NextdoorPrototype),
+  ('/quora_landing', QuoraLanding),
   ('/', MainPage)
 ], debug=True)
 
