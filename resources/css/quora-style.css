@@ -14,8 +14,16 @@ img.cowabunga {
 	width: 500px;
 }
 
-div.turtles {
+.turtle-btn {
 	text-align: center;
 	font-size: 18px;
-	margin-top: 4px;
+	width: 125px;
+	margin: 15px auto;
+	display: block;
+	background-color: #339933;
+	color: #FFFFFF;
+	border: 1px solid #267326;
+	border-radius: 2px;
+	text-decoration: none;
+	padding: 8px;
 }
