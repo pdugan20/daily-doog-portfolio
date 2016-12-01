@@ -169,7 +169,7 @@ class VinylPage(webapp2.RequestHandler):
     
     discogsUrl = 'https://api.discogs.com/users/patdugan/collection/folders/0/releases'
     
-    paginationBase = '100'  
+    paginationBase = '125'  
     consumerKey = 'qzhFhUTUMydigBFJCdGU'
     consumerSecret = 'jVlHbmkHintWgTXXEIuENaNLwzoYoJwE'
     
