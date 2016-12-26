@@ -1,7 +1,7 @@
 // center images inside elements
 function centerIsotypeImages(){
-	jQuery('.element').each(function(){
-		var $this = jQuery(this);
+	$('.element').each(function(){
+		var $this = $(this);
 
 		// Center images
 		if($this.find('img').get(0) === undefined){ return; }
@@ -17,33 +17,36 @@ function centerIsotypeImages(){
 		}
 	});
 }
-jQuery(window).load(function(){
+
+$(window).load(function(){
 	centerIsotypeImages();
 });
-jQuery(document).ready(function(){
-    
-    var $container = jQuery('#container');
-    var $containerSmall = jQuery('#content-small');
 
-      // add randomish size classes
-      $container.find('.element').each(function(){
-        var $this = jQuery(this),
+$(document).ready(function(){    
+    var $container = $('#container');
+    var $containerSmall = $('#content-small');
+
+    // loadAlbums();
+
+    // add randomish size classes
+    $container.find('.element').each(function(){
+        var $this = $(this),
             number = parseInt( $this.find('.number').text(), 10 );
         if ( number % 7 % 2 === 1 ) {
-          $this.addClass('width2');
+            $this.addClass('width2');
         }
         if ( number % 3 === 0 ) {
-          $this.addClass('height2');
+            $this.addClass('height2');
         }        
-		if ( number % 7 === 0 ) { //Rare because it picks random number from 1 to 11 and only 7 matches criteria
-          $this.addClass('width3');
-          $this.addClass('height2');
+		if ( number % 7 === 0 ) {
+            $this.addClass('width3');
+            $this.addClass('height2');
         }
-      });
+    });
 	
 	// Center images inside thumbnails on window resize end
 	var TO = false;
-	jQuery(window).bind("resize.centerisotypeimages", function(){
+	$(window).bind("resize.centerisotypeimages", function(){
 		if(TO !== false){
 			clearTimeout(TO);
 		}
@@ -51,8 +54,8 @@ jQuery(document).ready(function(){
 	});
 
 	// Snippet below is present because individual images load earlier than global window load happens
-	jQuery(".project-img").one("load",function(){
-		var $this = jQuery(this);
+	$(".project-img").one("load",function(){
+		var $this = $(this);
 		var cont_ratio = $this.parent().width() / $this.parent().height();
 		var img_ratio = $this.get(0).width / $this.get(0).height;
 		if(cont_ratio <= img_ratio){
@@ -63,7 +66,6 @@ jQuery(document).ready(function(){
 			$this.addClass('project-img-visible');
 		}
 	});
-	
 	    
     $container.isotope({
       itemSelector : '.element',
@@ -102,12 +104,11 @@ jQuery(document).ready(function(){
       }
     });
     
-    
-	var $optionSets = jQuery('#options .option-set'),
+	var $optionSets = $('#options .option-set'),
 	$optionLinks = $optionSets.find('a');
 
 	$optionLinks.click(function(){
-		var $this = jQuery(this);
+		var $this = $(this);
 		// don't proceed if already selected
 		if ( $this.hasClass('selected') ) {
 			return false;
@@ -157,37 +158,74 @@ jQuery(document).ready(function(){
 			$container.isotope( options );
 		}
 	}
-		
+
+    function loadAlbums() {
+        var processing = false;
+        var collectionPage = 1;
+        var discogsUrl = 'https://api.discogs.com/users/patdugan/collection/folders/0/releases';
+    
+        // var consumerKey = 'qzhFhUTUMydigBFJCdGU';
+        // var consumerSecret = 'jVlHbmkHintWgTXXEIuENaNLwzoYoJwE';
+    
+        // discogsUrl += '&key=' + consumerKey;
+        // discogsUrl += '&secret=' + consumerSecret;
+
+        if (processing){
+            return false;
+        }
+
+        $(window).scroll(function() {
+            if ($(window).scrollTop() >= $(document).height() - $(window).height() - 700){
+                processing = true;
+
+                $.ajax({ 
+                    url: discogsUrl, 
+                    type: "GET", 
+                    data: { 
+                        page: collectionPage, 
+                    },
+
+                    success: function (data) { 
+                        console.log(data);
+                        discogsUrl
+                        processing = false;
+                    },
+
+                    fail: function(){ 
+                        console.log('fail');
+                        processing = false;
+                    }
+
+                }); 
+            }
+        });
+    }
 	
-	// close bringPortfolio()
-	//jQuery('#compact_navigation_container').delegate('.header-back-to-blog-link', 'click', function(){
-	jQuery('.header-back-to-blog-link').on('click', function(){
-		// If button is supposed to redirect to some external URL
-		if(jQuery(this).hasClass('back-link-external')){ return; }
-		// Usual action of button
-		jQuery('.portfolio_box').removeClass('portfolio_box-visible');
-		jQuery('body').removeClass('daisho-portfolio-viewing-project');
-		jQuery('#compact_navigation_container').removeClass('compact_navigation_container-visible');
-		jQuery('.project-coverslide').removeClass('project-coverslide-visible');
-		jQuery('.project-navigation').removeClass('project-navigation-visible');
-		jQuery('.portfolio-arrowright').removeClass('portfolio-arrowright-visible');
-		jQuery('.portfolio-arrowleft').removeClass('portfolio-arrowleft-visible');
-		jQuery('.project-slides').empty();
-		jQuery('title').text(homepage_title);
+	$('.header-back-to-blog-link').on('click', function(){
+		if($(this).hasClass('back-link-external')){ return; }
+		$('.portfolio_box').removeClass('portfolio_box-visible');
+		$('body').removeClass('daisho-portfolio-viewing-project');
+		$('#compact_navigation_container').removeClass('compact_navigation_container-visible');
+		$('.project-coverslide').removeClass('project-coverslide-visible');
+		$('.project-navigation').removeClass('project-navigation-visible');
+		$('.portfolio-arrowright').removeClass('portfolio-arrowright-visible');
+		$('.portfolio-arrowleft').removeClass('portfolio-arrowleft-visible');
+		$('.project-slides').empty();
+		$('title').text(homepage_title);
 		var document_title = "Daisho WordPress Theme";
 		var portfoliohistorywpurl = "daisho";
 		window.history.pushState({}, document_title, ((portfoliohistorywpurl)?("/"+portfoliohistorywpurl+""):"/"));
 	});
 
 	// Close project on background click
-	/* jQuery(document).on('click', '.project-coverslide', function(){
+	/* $(document).on('click', '.project-coverslide', function(){
 		closePortfolioItem();
 	}); */
  
 	// change size of clicked element
 	$container.delegate( '.element', 'click', function(){
-		if(jQuery(this).find('.thumbnail-link').length != 0){ return; }
-		var current_id = jQuery(this).find('.id').text();
+		if($(this).find('.thumbnail-link').length != 0){ return; }
+		var current_id = $(this).find('.id').text();
 		bringPortfolio(current_id);
 		portfolio_closenum = 0;
 		portfolio_closedir = false;
@@ -203,17 +241,17 @@ jQuery(document).ready(function(){
 	
 	// change size of clicked element (small)
 	$containerSmall.on('click', '.element', function(){
-		if(jQuery(this).find('.thumbnail-link').length != 0){ return; }
-		var current_id = jQuery(this).find('.id').text();
+		if($(this).find('.thumbnail-link').length != 0){ return; }
+		var current_id = $(this).find('.id').text();
 		bringPortfolio(current_id);
 	});
 
 	// toggle variable sizes of all elements
-	jQuery('#toggle-sizes').find('a').click(function(){
-		if(jQuery(this).hasClass('toggle-selected')){ return false; }
-		jQuery('#toggle-sizes').find('a').removeClass('toggle-selected');
-		jQuery(this).addClass('toggle-selected');
-		if(!jQuery('#toggle-sizes a:first-child').hasClass('toggle-selected')){
+	$('#toggle-sizes').find('a').click(function(){
+		if($(this).hasClass('toggle-selected')){ return false; }
+		$('#toggle-sizes').find('a').removeClass('toggle-selected');
+		$(this).addClass('toggle-selected');
+		if(!$('#toggle-sizes a:first-child').hasClass('toggle-selected')){
 			$container.find('.element').addClass('element-small'); 
 		}else{ 
 			$container.find('.element').removeClass('element-small'); 
@@ -226,8 +264,8 @@ jQuery(document).ready(function(){
 		return false;
 	});
 
-	var $sortBy = jQuery('#sort-by');
-	jQuery('#shuffle a').click(function(){
+	var $sortBy = $('#sort-by');
+	$('#shuffle a').click(function(){
 		$container.isotope('shuffle');
 		$sortBy.find('.selected').removeClass('selected');
 		$sortBy.find('[data-option-value="random"]').addClass('selected');
